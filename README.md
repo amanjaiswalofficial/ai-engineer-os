@@ -1,29 +1,41 @@
-# AI Engineer OS — design reference
+# AI Engineer OS
 
-This is a design mockup created in a visual design tool, exported as a
-standalone page. Treat it as a REFERENCE MOCKUP, not production code:
-the markup and inline styles carry the design's precise values — colors,
-font sizes, spacing, radii, shadows, layout — which an implementation
-should replicate faithfully in its own components and styling system
-rather than copy wholesale.
+A free, personalised roadmap to becoming an AI engineer: what to learn, what to build, and which courses are not worth your time. Static site built with Vite + React. No accounts, no server, no analytics. Everything a visitor does is saved in their own browser (`localStorage`).
 
-## Contents
+## Run
 
-- `Main.dc.html` — the artboard (a Design Component: an `<x-dc>`
-  template + a small logic class). The values to replicate live in its
-  inline `style="…"` attributes and the `<helmet><style>` block.
-- `assets/` — files uploaded to the design (images, fonts, media)
-- `support.js`, `vendor/react*.js` — the runtime that renders the
-  component in a browser; not part of the design.
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # outputs to dist/
+npm run preview   # serves the production build at http://localhost:4173
+```
 
-## Uploaded files
+## Structure
 
-Images, fonts and media uploaded to the design are written once each under
-`assets/` — 3 in this export — and the exported files refer to them there. A
-reference a script puts together while the page runs (for example
-`"/_blob/" + id`) is not rewritten and does not load from this folder.
+```
+index.html          meta, Open Graph / Twitter tags, fonts
+public/favicon.svg
+src/App.jsx         state, hash routing, settings, effects
+src/views/          one file per view (home, assess/result, roadmap, learn, build, progress, about)
+src/data/           STAGES, RESOURCES, PROJECTS, VERDICTS, FEATURED, helpers (unchanged from the design)
+src/lib/fx.js       scroll and enter animations (Motion + anime.js)
+src/aios3d.js       Three.js scene
+source/             the original single-file design export, kept for reference
+```
 
-## Viewing
+Routing is hash based (`#/roadmap`, `#/learn/fastapi`, `#/build/doc-qa` ...), so no rewrite rules are needed on any static host.
 
-Serve the folder (e.g. `python3 -m http.server`) and open `Main.dc.html`;
-some browsers block the scripts over file://.
+localStorage keys: `ai-engineer-os-assessment`, `ai-engineer-os-progress`, `ai-engineer-os-settings`.
+
+## Deploy to GitHub + Vercel
+
+1. Create an empty public repo named `ai-engineer-os` on GitHub, then:
+   ```bash
+   git remote add origin git@github.com:<your-username>/ai-engineer-os.git
+   git push -u origin main
+   ```
+2. On Vercel: **Add New → Project → import the repo**.
+3. Framework Preset **Vite**, Build Command `npm run build`, Output Directory `dist`. Click **Deploy**.
+
+Every push to `main` deploys to production, and every pull request gets a preview URL.
