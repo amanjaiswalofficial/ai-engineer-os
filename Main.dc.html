@@ -1,0 +1,1846 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Engineer OS</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<script src="./assets/f8b23a4732ed941e4d6a6c72b93268c3.js"></script>
+<script src="./assets/a2ea678b4a18600c2b6b6baccb6781cd.js"></script>
+<script async src="./assets/0ce889de3fd8a280e13bc3bb1dde63bf.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&amp;family=Figtree:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.aios{--bg:#F7F5F2;--bg2:#EEEAE4;--card:#FFFFFF;--ink:#1B1A24;--ink2:#46445A;--ink3:#615E6F;--line:rgba(27,26,36,.12);--lav:#977FEF;--lav-wash:#ECE7FD;--lav-deep:#5A44C4;--peri:#C9CDFF;--mint-wash:#DDF8EC;--mint-deep:#0B6A4A;--peach-wash:#FFEBD6;--peach-deep:#8F4208;--pink:#FFB6DC;--pink-wash:#FFE3F1;--pink-deep:#9A1F68;--blue-wash:#E1E6FF;--blue-deep:#2F45B5;--gray-wash:#EAE8EE;--shadow:0 1px 2px rgba(27,26,36,.04),0 10px 28px -10px rgba(27,26,36,.14);--on:#1B1A24;--font-d:'Fraunces',Georgia,serif;--font-b:'Figtree',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;position:relative}
+.aios[data-theme=dark]{--bg:#14131A;--bg2:#1E1D27;--card:#1F1E29;--ink:#F2F0F8;--ink2:#CDCAD9;--ink3:#ABA8BC;--line:rgba(242,240,248,.14);--lav-wash:#2D2850;--lav-deep:#C4B8FA;--peri:#2A2750;--mint-wash:#17342B;--mint-deep:#8EE8C4;--peach-wash:#3A2A1B;--peach-deep:#FFC78E;--pink-wash:#3D2232;--pink-deep:#FFB3DA;--blue-wash:#222B54;--blue-deep:#A9B9FF;--gray-wash:#2A2934;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6)}
+.aios[data-theme=calm]{--bg:#EEEBE6;--bg2:#E5E1DB;--card:#F6F4F0;--ink:#2B2A31;--ink2:#4E4C57;--ink3:#5C5A65;--line:rgba(43,42,49,.14);--lav:#A79EC9;--lav-wash:#E4E1EE;--lav-deep:#4F4780;--peri:#D9DAEA;--mint-wash:#DCE8E1;--mint-deep:#2E5A47;--peach-wash:#EDE1D4;--peach-deep:#6E4420;--pink:#E6C9D6;--pink-wash:#EBDDE3;--pink-deep:#74364F;--blue-wash:#DEE1EE;--blue-deep:#38437A;--gray-wash:#E3E0DB;--shadow:0 1px 2px rgba(43,42,49,.06)}
+.aios[data-font=readable]{--font-d:'Atkinson Hyperlegible Next',system-ui,sans-serif;--font-b:'Atkinson Hyperlegible Next',system-ui,sans-serif;line-height:1.65;letter-spacing:.01em}
+.aios[data-simple=on] .deco{display:none!important}
+:where(.aios) button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0;text-align:inherit}
+:where(.aios) h1,:where(.aios) h2,:where(.aios) h3,:where(.aios) p,:where(.aios) ul,:where(.aios) ol,:where(.aios) dl,:where(.aios) dd{margin:0;padding:0}
+:where(.aios) ul,:where(.aios) ol{list-style:none}
+.aios :focus-visible{outline:3px solid var(--lav-deep);outline-offset:3px;border-radius:12px}
+.aios main:focus{outline:none}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-70px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:700px}
+.main{flex:1;padding-bottom:24px}
+/* header */
+.top{position:sticky;top:0;z-index:30;background:var(--bg)}
+.top-in{display:flex;align-items:center;gap:12px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;border-radius:14px}
+.logo{width:34px;height:34px;border-radius:11px;background:var(--lav);display:grid;place-items:center;color:var(--on)}
+.brand-t{font:600 18px/1 var(--font-d);letter-spacing:-.01em}
+.topnav{display:none;gap:4px;margin-left:12px}
+.navbtn{min-height:44px;padding:0 16px;border-radius:999px;font-weight:600;font-size:15px;color:var(--ink2)}
+.navbtn:hover{background:var(--lav-wash);color:var(--ink)}
+.navbtn.on{background:var(--ink);color:var(--bg)}
+.top-r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.iconbtn{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--card);box-shadow:var(--shadow);flex:none}
+.top-follow{display:none!important}
+.tabbar,.dock{position:sticky;bottom:0;z-index:30;background:var(--card);border-radius:24px 24px 0 0;box-shadow:0 -8px 24px -14px rgba(27,26,36,.3);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.tabbar{display:flex;justify-content:space-around;gap:4px}
+.tab{flex:1;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:18px;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--ink3)}
+.tab.on{background:var(--lav-wash);color:var(--ink)}
+.dock{padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.dock .btn{width:100%}
+@media(min-width:860px){.topnav{display:flex}.top-follow{display:inline-flex!important}.tabbar,.dock{display:none!important}.top-about{display:none}.main{padding-bottom:48px}}
+/* type */
+.h1{font:500 clamp(2.15rem,7.4vw,3.9rem)/1.04 var(--font-d);letter-spacing:-.025em;text-wrap:balance}
+.h1.sm{font-size:clamp(1.9rem,6vw,2.9rem)}
+.h2{font:500 clamp(1.65rem,4.6vw,2.4rem)/1.12 var(--font-d);letter-spacing:-.02em;text-wrap:balance}
+.h3{font:600 clamp(1.1rem,2.4vw,1.25rem)/1.25 var(--font-d);letter-spacing:-.01em}
+.lead{font-size:clamp(1.05rem,2.6vw,1.2rem);color:var(--ink2);max-width:38em;text-wrap:pretty}
+.body2{color:var(--ink2);font-size:15.5px;text-wrap:pretty}
+.micro{font-size:13.5px;color:var(--ink3)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+/* pills, chips, buttons */
+.pill{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;width:fit-content;white-space:nowrap}
+.pill .i{width:14px;height:14px}
+.p-lav{background:var(--lav-wash);color:var(--lav-deep)}.p-mint{background:var(--mint-wash);color:var(--mint-deep)}.p-peach{background:var(--peach-wash);color:var(--peach-deep)}.p-pink{background:var(--pink-wash);color:var(--pink-deep)}.p-blue{background:var(--blue-wash);color:var(--blue-deep)}.p-gray{background:var(--gray-wash);color:var(--ink2)}
+.ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex:none}
+.t-lav{background:var(--lav-wash);color:var(--lav-deep)}.t-mint{background:var(--mint-wash);color:var(--mint-deep)}.t-peach{background:var(--peach-wash);color:var(--peach-deep)}.t-pink{background:var(--pink-wash);color:var(--pink-deep)}.t-blue{background:var(--blue-wash);color:var(--blue-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none;border:0;transition:background .2s,box-shadow .2s}
+.btn:hover{box-shadow:0 8px 20px -8px rgba(27,26,36,.45)}
+.btn-lg{min-height:54px;padding:0 28px;font-size:16px}
+.btn-sm{min-height:44px;padding:0 18px;font-size:14px}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-soft{background:var(--lav-wash);color:var(--ink)}
+.btn-pink{background:var(--pink);color:var(--on)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
+.linkbtn{min-height:44px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--lav-deep);border-radius:12px}
+.linkbtn:hover{text-decoration:underline}
+.card{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:22px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.center{display:flex;justify-content:center;margin-top:24px}
+.sec{padding-top:40px;padding-bottom:8px}.sec-tight{padding-top:24px}
+.sec-h{margin-bottom:20px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+/* hero */
+.hero{padding:16px 0 8px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.stage{position:relative;border-radius:36px;background:radial-gradient(110% 80% at 15% 8%,rgba(255,255,255,.5),transparent 60%),var(--peri);overflow:hidden;width:100%;aspect-ratio:1/.92;max-height:540px}
+.stage-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.stage-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:18px}
+.stage-fallback span{width:34px;height:34px;border-radius:50%}
+.legend{position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:6px}
+.leg{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.82);color:#1B1A24;font-size:12px;font-weight:700}
+.ldot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.ldot.t-mint{background:#6FD9AE}.ldot.t-peach{background:#FDAE63}.ldot.t-lav{background:#977FEF}.ldot.t-pink{background:#FF8FC4}.ldot.t-blue{background:#7C93F6}
+@media(min-width:900px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;padding-top:20px}}
+.cred{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--lav);color:var(--on);display:grid;place-items:center;font:600 22px var(--font-d);flex:none}
+.cred-body{flex:1 1 260px;display:flex;flex-direction:column;gap:2px}
+.cred-t{font-weight:700}.cred-s{color:var(--ink2);font-size:15px}
+.get{display:flex;flex-direction:column;gap:12px}
+.hiw{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+.hiw-n{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:600 18px var(--font-d)}
+.hiw-svg{width:120px;height:10px;color:var(--lav);margin-top:-4px}
+.hiw-svg path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 18px;margin:0 -20px}
+.rail>*{flex:0 0 min(78vw,290px);scroll-snap-align:start}
+@media(min-width:1000px){.rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;margin:0;padding:4px 0 8px}.rail>*{flex:initial}}
+.pv{display:flex;flex-direction:column;gap:10px;height:100%}
+.pv-top{display:flex;justify-content:space-between;align-items:center}
+.pv-n{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.pv-b{font-size:14.5px;color:var(--ink2);margin-top:auto}
+.follow{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--pink-wash)}
+.follow-body{flex:1 1 280px;display:flex;flex-direction:column;gap:4px}
+.follow-h{font:600 1.2rem/1.25 var(--font-d)}.follow-s{color:var(--ink2);font-size:15px}
+.follow-col{flex-direction:column;align-items:flex-start}.follow-col .follow-body{flex:0 0 auto}
+
+/* v2 landing: scroll-led */
+.sp{display:none;position:fixed;left:0;right:0;top:0;height:3px;background:var(--lav);transform-origin:0 50%;transform:scaleX(0);z-index:60;pointer-events:none}
+.h0{font:500 clamp(2.7rem,10.4vw,6.9rem)/.98 var(--font-d);letter-spacing:-.035em;text-wrap:balance}
+.hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.hw>span{display:inline-block}
+.hw.em>span{color:var(--lav-deep)}
+.hero2 .hero-grid{grid-template-columns:minmax(0,1fr)!important;max-width:1640px}
+.hero2 .hero-copy{align-items:center;text-align:center;gap:22px}
+.hero2 .h0{font-size:clamp(2.8rem,9.4vw,10rem);max-width:none;line-height:.96}
+.hero2 .lead{max-width:32em;margin-inline:auto}
+.hero2 .cta-row{justify-content:center}
+.hero2{min-height:calc(100svh - 68px);display:flex;align-items:center;padding:12px 0 40px;position:relative}
+.hero2 .hero-grid{gap:32px}
+.hero2 .lead{font-size:clamp(1.1rem,2.8vw,1.35rem)}
+.cue{display:none;position:absolute;left:0;right:0;bottom:16px}
+@media(min-width:860px){.cue{display:block}.hero2{padding-bottom:104px}}
+.cue-in{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1.5px solid var(--line);padding-top:14px}
+.cue-t{font-size:14px;font-weight:600;color:var(--ink2)}
+.cue-b{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);transition:background .25s,color .25s}
+.cue-b .i{transform:rotate(90deg);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.cue-b:hover{background:var(--ink);color:var(--bg)}.cue-b:hover .i{transform:rotate(90deg) translateX(3px)}
+.marq{overflow:hidden;border-block:1.5px solid var(--line);padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marq-track{display:flex;gap:12px;width:max-content;animation:marq 300s linear infinite}
+.mq{transition:transform .5s cubic-bezier(.22,1,.36,1);display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-weight:600;font-size:15px;white-space:nowrap}
+.mq:hover{transform:translateY(-4px)}
+.marq{overflow:visible;padding:36px 0;border-block:1.5px solid var(--line);-webkit-mask-image:none;mask-image:none}
+.marq-track{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;width:auto;max-width:1120px;margin:0 auto;padding:0 20px;animation:none!important;transform:none!important}
+.mq[aria-hidden]{display:none}
+.mq i{width:9px;height:9px;border-radius:50%;display:inline-block}
+@keyframes marq{to{transform:none}}
+.aios[data-motion=calm] .marq-track
+@media(prefers-reduced-motion:reduce){.marq-track{animation:none!important}}
+.seq{padding:72px 0}
+.seq-in{max-width:1640px}
+.seq-box{display:flex;flex-direction:column;gap:14px;width:100%}
+.seq-l{font:500 clamp(2.1rem,7.2vw,8.4rem)/1.06 var(--font-d);letter-spacing:-.032em;text-wrap:balance;margin:0;text-align:center}
+.seq-l .k{color:var(--lav-deep)}
+.seq-dots{display:none}
+.seq[data-on]{padding:0;height:560vh}
+.seq[data-on] .seq-stick{position:sticky;top:68px;height:calc(100svh - 68px);display:flex;align-items:center}
+.seq[data-on] .seq-in{position:relative;display:flex;align-items:center;gap:24px;justify-content:space-between}
+.seq[data-on] .seq-box{position:relative;display:block;min-height:min(72svh,44em);width:100%}
+.seq[data-on] .seq-l{position:absolute;left:0;right:0;top:50%;opacity:0;will-change:transform,opacity;transform:translateY(-50%)}
+.seq[data-on] .seq-dots{display:flex;flex-direction:column;gap:8px;flex:none}
+.seq-dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .25s,transform .25s}
+.seq-dots i.on{background:var(--lav-deep);transform:scale(1.5)}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+.stat2{display:flex;flex-direction:column;gap:6px;padding:22px 0 24px;border-top:1.5px solid var(--ink)}
+.stat2 b{font:500 clamp(3rem,10vw,5.2rem)/1 var(--font-d);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat2>span{color:var(--ink2);font-size:15px;max-width:14em}
+@media(min-width:860px){.nums{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}}
+.stack-h{margin-bottom:28px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.stack{display:flex;flex-direction:column}
+.path-side{display:none}
+@media(min-width:1000px){.path-grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:36px;align-items:start}.path-side{display:block;position:sticky;top:92px}.path-side .stage{aspect-ratio:1/1.1;max-height:none}.sk{grid-template-columns:minmax(0,.5fr) minmax(0,1.5fr)!important;padding:32px 36px!important}}
+.sk{position:sticky;top:80px;display:grid;gap:18px;border-radius:32px;padding:26px 22px 28px;min-height:360px;margin-top:16px;box-shadow:0 1px 2px rgba(27,26,36,.05),0 18px 40px -18px rgba(27,26,36,.28);transform-origin:50% 0;color:var(--ink)}
+.sk:nth-child(2){top:92px}.sk:nth-child(3){top:104px}.sk:nth-child(4){top:116px}.sk:nth-child(5){top:128px}
+.sk-mint{background:var(--mint-wash)}.sk-peach{background:var(--peach-wash)}.sk-lav{background:var(--lav-wash)}.sk-pink{background:var(--pink-wash)}.sk-blue{background:var(--blue-wash)}
+.sk-mint .sk-num{color:var(--mint-deep)}.sk-peach .sk-num{color:var(--peach-deep)}.sk-lav .sk-num{color:var(--lav-deep)}.sk-pink .sk-num{color:var(--pink-deep)}.sk-blue .sk-num{color:var(--blue-deep)}
+.sk-l{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.sk-num{font:500 clamp(5rem,22vw,10rem)/.78 var(--font-d);letter-spacing:-.04em}
+.sk .pill{background:var(--card);color:var(--ink2)}
+.sk-r{display:flex;flex-direction:column;gap:10px;align-self:end}
+.sk-t{font:500 clamp(1.5rem,5vw,2.2rem)/1.1 var(--font-d);letter-spacing:-.02em}
+.sk-b{color:var(--ink2);font-size:16.5px;max-width:34em;text-wrap:pretty}
+.sk-build{font-size:15px;color:var(--ink);background:var(--card);border-radius:16px;padding:12px 14px;margin-top:4px}
+@media(min-width:860px){.sk{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);padding:40px 48px;min-height:400px;align-items:center;border-radius:40px}.sk-r{align-self:center}.sk-l{flex-direction:column;height:100%;justify-content:space-between}}
+.band{background:#1B1A24;color:#F7F5F2;border-radius:36px;margin:72px 12px 0;padding:64px 0 56px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.band .eyebrow{color:#B9B5CC}
+.band .wrap{max-width:1560px}
+.band-h{font:500 clamp(2.1rem,6.6vw,6.4rem)/1.02 var(--font-d);letter-spacing:-.032em;margin:12px 0 44px;text-wrap:balance;max-width:14em}
+.skl{display:flex;flex-direction:column}
+.skl-i{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-top:1px solid rgba(255,255,255,.14)}
+.skl-t{font:500 clamp(1.4rem,4.4vw,3.1rem)/1.15 var(--font-d);letter-spacing:-.02em}
+.skl-x{background:linear-gradient(#FF8FC4,#FF8FC4) no-repeat 0 58%/calc(var(--s,1) * 100%) 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.skl-v{color:#6FD9AE;font-weight:600;font-size:clamp(15.5px,1.4vw,19px)}
+@media(min-width:860px){.skl-i{flex-direction:row;align-items:baseline;justify-content:space-between;gap:32px}.skl-t{flex:1.5}.skl-v{flex:1;text-align:right}}
+.wall{overflow:hidden;padding-top:72px}
+.wall-rows{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.wall-row{display:flex;gap:12px;width:max-content;padding-left:20px}
+.vc{width:min(300px,76vw);flex:none;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.vc-t{font:600 1.05rem/1.25 var(--font-d);letter-spacing:-.01em}
+.vc-p{color:var(--ink3);font-size:14px}
+.close{padding-top:88px}
+.close-h{margin-bottom:24px}
+.who-head{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:28px}
+.who-head .lead{max-width:34em}
+.cos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));margin-top:36px}
+.co{display:flex;flex-direction:column;gap:12px;min-height:150px}
+.co-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.co-name{font:600 1.9rem/1 var(--font-d);letter-spacing:-.02em}
+.co-role{font-weight:700;font-size:15px}.co-d{color:var(--ink2);font-size:14.5px}
+.exp{display:flex;flex-direction:column;gap:14px}
+.exp-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.exp-co{font:600 1.3rem/1.2 var(--font-d)}.exp-when{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.exp-r{color:var(--ink2);font-size:15px;margin-top:-6px}
+.sk2{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;background:var(--bg2);font-weight:600;font-size:14px}
+.sk2s{display:flex;flex-wrap:wrap;gap:8px}
+.skg{display:flex;flex-direction:column;gap:8px}
+.foot{padding-top:40px;padding-bottom:16px}
+.foot-in{border-top:1.5px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:6px}
+.foot-t{font-weight:700}.foot-nav{display:flex;flex-wrap:wrap;gap:16px}
+/* assess */
+.as-top{display:flex;align-items:center;justify-content:space-between;margin:8px 0 12px}
+.dots{display:flex;gap:8px;margin-bottom:28px}
+.dot{height:8px;flex:1;border-radius:8px;background:var(--line)}.dot.on{background:var(--lav)}.dot.now{background:var(--ink)}
+.q-hint{color:var(--ink3);margin:6px 0 22px}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;min-height:72px;padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--shadow);border:2px solid transparent;text-align:left}
+.opt.sel{border-color:var(--lav-deep);background:var(--lav-wash)}
+.opt-t{display:flex;flex-direction:column;flex:1;min-width:0}.opt-t strong{font-weight:700}.opt-t small{font-size:14px;color:var(--ink3)}
+.opt-check{margin-left:auto;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;color:transparent;flex:none}
+.opt.sel .opt-check{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.opt-check .i{width:14px;height:14px;stroke-width:3}
+.as-actions{display:flex;justify-content:space-between;gap:12px;margin-top:28px;position:sticky;bottom:0;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:var(--bg)}
+.as-actions .btn-lg{flex:1}
+.result-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:32px 22px}
+.ring-wrap{position:relative;width:170px;height:170px}
+.ring{width:100%;height:100%}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring-bg{stroke:var(--lav-wash)}.ring-fg{stroke:var(--lav)}
+.ring-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-num{font:500 46px/1 var(--font-d)}.ring-unit{font-size:13px;color:var(--ink3);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.stat{background:var(--bg2);border-radius:18px;padding:12px 8px;display:flex;flex-direction:column;gap:2px}
+.stat b{font:500 24px/1.1 var(--font-d)}.stat span{font-size:12.5px;color:var(--ink3)}
+/* roadmap */
+.vh{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:12px 0 24px}
+.rm-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
+@media(min-width:960px){.rm-grid{grid-template-columns:minmax(0,1fr) 320px}.rm-side{position:sticky;top:84px}}
+.rm-side{display:flex;flex-direction:column;gap:16px}
+.timeline{position:relative;display:flex;flex-direction:column;gap:14px;padding-left:46px}
+.tl-line,.tl-fill{position:absolute;left:19px;top:24px;bottom:24px;width:3px;border-radius:3px}
+.tl-line{background:var(--line)}.tl-fill{background:var(--lav);transform-origin:top}
+.tl-item{position:relative}
+.tl-dot{position:absolute;left:-46px;top:16px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:700 15px var(--font-b);border:3px solid var(--bg)}
+.stage-card{padding:0;overflow:hidden}
+.stage-head{display:flex;gap:14px;align-items:center;width:100%;min-height:76px;padding:16px 18px}
+.sh-t{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.sh-meta{display:flex;flex-wrap:wrap;gap:6px}
+.sh-title{font:600 1.15rem/1.25 var(--font-d)}.sh-sub{font-size:14px;color:var(--ink3)}
+.chev{width:36px;height:36px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;flex:none;transition:transform .3s}
+.stage-card.open .chev{transform:rotate(180deg)}
+.fold{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.fold.open{grid-template-rows:1fr}
+.fold>div{overflow:hidden;min-height:0;visibility:hidden;transition:visibility 0s linear .35s}
+.fold.open>div{visibility:visible;transition-delay:0s}
+.fold-in{padding:4px 18px 20px;display:flex;flex-direction:column;gap:18px}
+.blk{display:flex;flex-direction:column;gap:6px}
+.blk-h{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+.bul{display:flex;flex-direction:column;gap:6px}
+.bul li{padding-left:18px;position:relative;color:var(--ink2);font-size:15.5px}
+.bul li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--lav)}
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+.reslink{display:flex;flex-direction:column;gap:2px;align-items:flex-start;min-height:44px;padding:10px 14px;border-radius:16px;background:var(--bg2);width:100%}
+.reslink b{font-weight:700;color:var(--ink)}.reslink small{color:var(--ink3);font-size:13.5px}
+.reslink:hover{background:var(--lav-wash)}
+a.reslink{text-decoration:none;color:inherit}
+.alt-top{display:flex;align-items:center;gap:10px;width:100%}
+.alt-top b{flex:1;min-width:0}
+.alt-top .pill{margin-left:auto;flex:none}
+.fav{position:relative;width:22px;height:22px;border-radius:7px;flex:none;display:inline-grid;place-items:center;background:var(--lav-wash);color:var(--lav-deep);font:700 12px var(--font-b);overflow:hidden}
+.fav-l{position:absolute;inset:0;display:grid;place-items:center}
+.fav-i{position:relative;width:22px;height:22px;object-fit:contain;background:#fff;border-radius:7px;display:block}
+.rc-title{display:flex;align-items:center;gap:10px}
+.alts{display:grid;gap:8px}
+.reslink .alt-n{color:var(--ink2);font-size:14px;margin-top:2px}
+.srcs{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.how{display:flex;flex-direction:column;gap:14px}
+.modenote{background:var(--peach-wash);color:var(--peach-deep);border-radius:16px;padding:12px 14px;font-size:14.5px;font-weight:500}
+.sum{display:flex;flex-direction:column;gap:14px}
+.sum-r{display:flex;flex-direction:column;gap:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{padding:4px 12px;border-radius:999px;background:var(--bg2);font-size:13.5px;font-weight:600;color:var(--ink2)}
+.callout{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+/* learn / build */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 20px 12px;margin:0 -20px}
+.chip{flex:none;min-height:44px;padding:0 18px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-weight:700;font-size:14.5px;color:var(--ink2)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.rescard{display:flex;flex-direction:column;gap:8px;align-items:flex-start;text-align:left;width:100%;height:100%;transition:box-shadow .2s}
+.rescard:hover{box-shadow:0 14px 32px -12px rgba(27,26,36,.28)}
+.rc-top{display:flex;flex-wrap:wrap;gap:6px}
+.rc-title{font:600 1.1rem/1.25 var(--font-d)}.rc-prov{font-size:13.5px;color:var(--ink3);font-weight:600}
+.rc-line{color:var(--ink2);font-size:15px}
+.rc-foot{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink3);font-weight:600}
+.rc-foot .i{width:15px;height:15px}
+.feat{display:flex;gap:14px;overflow-x:auto;padding:4px 20px 14px;margin:0 -20px;scroll-snap-type:x mandatory}
+.feat>*{flex:0 0 min(80vw,320px);scroll-snap-align:start}
+@media(min-width:1000px){.feat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible;margin:0;padding:4px 0 8px}.feat>*{flex:initial}}
+.facts{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.qa{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-top:1.5px solid var(--line)}
+.qa:first-child{border-top:0;padding-top:0}
+.qa-q{font:600 1.05rem/1.3 var(--font-d)}
+.status{margin-left:auto;padding:2px 10px;border-radius:999px;background:var(--mint-wash);color:var(--mint-deep);font-size:12px;font-weight:700}
+.chk{position:relative;display:flex;align-items:flex-start;gap:12px;min-height:48px;padding:8px 0;cursor:pointer}
+.chk-in{position:absolute;left:0;top:0;width:44px;height:44px;opacity:0;margin:0;cursor:pointer}
+.chk-box{width:28px;height:28px;border-radius:9px;border:2px solid var(--ink3);display:grid;place-items:center;color:transparent;flex:none;margin-top:2px}
+.chk-box .i{width:16px;height:16px;stroke-width:3}
+.chk-box.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chk-in:checked+.chk-box{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chk-in:focus-visible+.chk-box{outline:3px solid var(--lav-deep);outline-offset:3px}
+.chk-t{padding-top:3px;color:var(--ink2)}
+.pbar{height:10px;border-radius:10px;background:var(--bg2);overflow:hidden}
+.pbar>i{display:block;height:100%;border-radius:10px;background:var(--lav)}
+.irow{display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 0;border-top:1.5px solid var(--line)}
+.irow:first-child{border-top:0}
+.irow-t{flex:1;min-width:0;font-size:15px}
+.irow.done .irow-t{color:var(--ink3);text-decoration:line-through}
+.notes{width:100%;min-height:120px;border-radius:18px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:14px;font:inherit;resize:vertical}
+/* overlays */
+.sheet-bg{position:fixed;inset:0;background:rgba(20,19,26,.5);z-index:60;width:100%;border-radius:0}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-height:92vh;overflow:auto;background:var(--card);border-radius:28px 28px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:16px}
+@media(min-width:700px){.sheet{inset:0;margin:auto;height:fit-content;width:min(540px,92vw);border-radius:28px}}
+.sheet-top{display:flex;align-items:center;justify-content:space-between}
+.set-row{display:flex;flex-direction:column;gap:8px;padding:12px 0;border-top:1.5px solid var(--line)}
+.set-l{font-weight:700}.set-d{font-size:14px;color:var(--ink3)}
+.seg{display:flex;gap:6px;background:var(--bg2);padding:4px;border-radius:16px}
+.seg button{flex:1;min-height:44px;border-radius:12px;font-weight:700;font-size:14px;color:var(--ink2);text-align:center}
+.seg button[aria-pressed=true]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(92px + env(safe-area-inset-bottom));margin:auto;width:fit-content;max-width:90vw;z-index:80;pointer-events:none}
+.toast-in{display:block;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:600;font-size:14.5px}
+.fx{position:fixed;inset:0;pointer-events:none;z-index:70;overflow:hidden}
+.fx-dot{position:absolute;left:50%;bottom:28%;width:14px;height:14px;border-radius:50%;opacity:0}
+.fx-dot:nth-child(5n+1){background:#6FD9AE}.fx-dot:nth-child(5n+2){background:#FDAE63}.fx-dot:nth-child(5n+3){background:#977FEF}.fx-dot:nth-child(5n+4){background:#FF8FC4}.fx-dot:nth-child(5n){background:#7C93F6}
+@media(prefers-reduced-motion:reduce){.aios *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+.aios[data-motion=calm] *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+</style>
+</helmet>
+<div id="aios" class="aios" data-theme="{{theme}}" data-font="{{font}}" data-simple="{{simple}}" data-motion="{{motionMode}}" data-view="{{view}}">
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path d="M15 5.764v15"></path><path d="M9 3.236v15"></path></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"></path></symbol>
+<symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"></path><path d="m18 15 4-4"></path><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"></path><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></symbol>
+<symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></symbol>
+<symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 18V5"></path><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path><path d="M17.707 6.294A3 3 0 1 0 12 5a3 3 0 1 0-5.707 1.294"></path><path d="M17.996 5.125a4 4 0 0 1 2.526 5.77"></path><path d="M18 18a4 4 0 0 0 2-7.465"></path><path d="M19.967 17.482a4 4 0 1 1-7.967.517 4 4 0 1 1-7.967-.517"></path><path d="M6 18a4 4 0 0 1-2-7.465"></path><path d="M6.004 5.125a4 4 0 0 0-2.526 5.77"></path></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0 0 10-10 25.9 25.9 0 0 0-1.04-7.281 1 1 0 0 0-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20"></path><path d="M2 21a5 5 0 0 1 2.911-4.544C7.613 15.212 8.351 15.24 11 13"></path></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></symbol>
+<symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><path d="M8.12 8.12 12 12"></path><path d="M20 4 8.12 15.88"></path><circle cx="6" cy="18" r="3"></circle><path d="M14.8 14.8 20 20"></path></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"></path></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"></path><path d="M2 6h4"></path><path d="M2 10h4"></path><path d="M2 14h4"></path><path d="M2 18h4"></path><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"></path></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></symbol>
+</defs>
+</svg>
+<a class="skip" href="#aios-main">Skip to content</a>
+<header class="top">
+<div class="wrap top-in">
+<button class="brand pressable" onClick="{{goHome}}" aria-label="AI Engineer OS, home">
+<span class="logo deco" aria-hidden="true"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 24c6 0 7-8 12-8s4-8 10-8"></path><circle cx="6" cy="24" r="2" fill="currentColor"></circle><circle cx="17" cy="16" r="2" fill="currentColor"></circle><circle cx="27" cy="8" r="2" fill="currentColor"></circle></svg></span>
+<span class="brand-t">AI Engineer OS</span>
+</button>
+<nav class="topnav" aria-label="Main">
+<sc-for list="{{nav}}" as="n" hint-placeholder-count="5">
+<button class="{{n.cls}}" onClick="{{n.go}}" aria-current="{{n.current}}"><span>{{n.label}}</span></button>
+</sc-for>
+</nav>
+<div class="top-r">
+<a class="btn btn-pink btn-sm top-follow pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+<button class="iconbtn top-about pressable" onClick="{{goAbout}}" aria-label="About"><svg class="i"><use href="#i-user"></use></svg></button>
+<button class="iconbtn pressable" onClick="{{openSettings}}" aria-label="Sensory settings"><svg class="i"><use href="#i-sliders"></use></svg></button>
+</div>
+</div>
+</header>
+<main id="aios-main" class="main" tabindex="-1">
+<div id="aios-view">
+
+<sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
+<div>
+<div class="sp" aria-hidden="true"></div>
+<section class="hero2" id="aios-hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<span class="pill p-lav reveal"><svg class="i"><use href="#i-sparkles"></use></svg><span>Free · no sign-up</span></span>
+<h1 class="h0"><span class="hw"><span>Become</span></span> <span class="hw"><span>an</span></span> <span class="hw"><span>AI</span></span> <span class="hw"><span>engineer.</span></span> <span class="hw"><span>Learn</span></span> <span class="hw"><span>what</span></span> <span class="hw"><span>matters.</span></span> <span class="hw em"><span>Skip</span></span> <span class="hw em"><span>the</span></span> <span class="hw em"><span>rest.</span></span></h1>
+<p class="lead reveal">A free, personalised roadmap to becoming an AI engineer: what to learn, what to build, and which courses are not worth your time.</p>
+<div class="cta-row reveal">
+<button class="btn btn-lg pressable" onClick="{{startAssess}}"><span>Find your path</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+<button class="btn btn-ghost btn-lg pressable" onClick="{{scrollSample}}"><span>See the base path</span></button>
+</div>
+<p class="micro reveal">2–3 minutes. Your answers stay on this device.</p>
+</div>
+</div>
+<div class="cue"><div class="wrap cue-in"><span class="cue-t">Why this is different</span><button class="cue-b pressable" onClick="{{scrollNext}}" aria-label="Scroll to the next section"><svg class="i"><use href="#i-arrow-r"></use></svg></button></div></div>
+</section>
+
+<div class="marq deco" aria-hidden="true"><div class="marq-track"><span class="mq"><i style="background:#977FEF"></i>Python</span><span class="mq"><i style="background:#6FD9AE"></i>FastAPI</span><span class="mq"><i style="background:#FDAE63"></i>Structured outputs</span><span class="mq"><i style="background:#FF8FC4"></i>RAG</span><span class="mq"><i style="background:#7C93F6"></i>Tool calling</span><span class="mq"><i style="background:#977FEF"></i>Agents</span><span class="mq"><i style="background:#6FD9AE"></i>Evals</span><span class="mq"><i style="background:#FDAE63"></i>Tracing</span><span class="mq"><i style="background:#FF8FC4"></i>Cost and latency</span><span class="mq"><i style="background:#7C93F6"></i>Docker</span><span class="mq"><i style="background:#977FEF"></i>Embeddings</span><span class="mq"><i style="background:#6FD9AE"></i>Testing</span><span class="mq" aria-hidden="true"><i style="background:#977FEF"></i>Python</span><span class="mq" aria-hidden="true"><i style="background:#6FD9AE"></i>FastAPI</span><span class="mq" aria-hidden="true"><i style="background:#FDAE63"></i>Structured outputs</span><span class="mq" aria-hidden="true"><i style="background:#FF8FC4"></i>RAG</span><span class="mq" aria-hidden="true"><i style="background:#7C93F6"></i>Tool calling</span><span class="mq" aria-hidden="true"><i style="background:#977FEF"></i>Agents</span><span class="mq" aria-hidden="true"><i style="background:#6FD9AE"></i>Evals</span><span class="mq" aria-hidden="true"><i style="background:#FDAE63"></i>Tracing</span><span class="mq" aria-hidden="true"><i style="background:#FF8FC4"></i>Cost and latency</span><span class="mq" aria-hidden="true"><i style="background:#7C93F6"></i>Docker</span><span class="mq" aria-hidden="true"><i style="background:#977FEF"></i>Embeddings</span><span class="mq" aria-hidden="true"><i style="background:#6FD9AE"></i>Testing</span></div></div>
+
+<section class="seq" aria-label="Why this exists"><div class="seq-stick"><div class="wrap seq-in"><div class="seq-box"><p class="seq-l">Most AI roadmaps are a pile of links.</p><p class="seq-l">47 hours of video.</p><p class="seq-l">Three frameworks that change by spring.</p><p class="seq-l">And no idea what to <span class="k">skip</span>.</p><p class="seq-l">This one comes from 7 years of shipping production ML.</p><p class="seq-l">At Harness, CRED and Walmart.</p><p class="seq-l">Risk models. Recommenders. AI agents. Petabytes of data.</p><p class="seq-l">So here is what to <span class="k">learn</span>, what to <span class="k">build</span>, and what to <span class="k">ignore</span>.</p></div><div class="seq-dots deco" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></section>
+
+<section class="wrap sec-tight">
+<div class="nums">
+<div class="stat2"><b data-cv="5">5</b><span>stages, trimmed to what you do not know yet</span></div>
+<div class="stat2"><b data-cv="12">12</b><span>resources reviewed with a verdict</span></div>
+<div class="stat2"><b data-cv="4">4</b><span>portfolio projects with checkable criteria</span></div>
+<div class="stat2"><b data-cv="2">2</b><span>minutes to get your own roadmap</span></div>
+</div>
+</section>
+
+<section class="wrap sec" id="aios-sample">
+<div class="stack-h">
+<span class="eyebrow">The base path</span>
+<h2 class="h2 reveal">Five stages. Yours gets trimmed to what you do not already know.</h2>
+</div>
+<div class="path-grid">
+<div class="path-side deco" aria-hidden="true">
+<div class="stage"><canvas id="aios-path3d" class="stage-canvas"></canvas>
+<sc-if value="{{webglFailed}}" hint-placeholder-val="{{ false }}">
+<div class="stage-fallback"><span class="t-mint"></span><span class="t-peach"></span><span class="t-lav"></span><span class="t-pink"></span><span class="t-blue"></span></div>
+</sc-if>
+<ul class="legend">
+<sc-for list="{{legend}}" as="l" hint-placeholder-count="5">
+<li class="leg"><span class="{{l.dot}}"></span><span>{{l.label}}</span></li>
+</sc-for>
+</ul>
+</div>
+</div>
+<div class="stack">
+<sc-for list="{{preview}}" as="p" hint-placeholder-count="5">
+<article class="{{p.skCls}}">
+<div class="sk-l"><span class="sk-num" aria-hidden="true">{{p.num}}</span><span class="pill"><span>{{p.hours}}</span></span></div>
+<div class="sk-r">
+<p class="pv-n">{{p.label}}</p>
+<h3 class="sk-t">{{p.title}}</h3>
+<p class="sk-b">{{p.blurb}}</p>
+<p class="sk-build"><strong>Build:</strong> <span>{{p.build}}</span></p>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+<div class="center"><button class="btn btn-lg pressable" onClick="{{startAssess}}"><span>Personalise this path</span><svg class="i"><use href="#i-arrow-r"></use></svg></button></div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<span class="eyebrow">What to skip</span>
+<h2 class="band-h">Half of getting good is knowing what not to do.</h2>
+<ul class="skl"><li class="skl-i"><span class="skl-t"><span class="skl-x">A 40-hour “Python from zero” course</span></span><span class="skl-v">If you can already code: ship one small deployed service instead.</span></li><li class="skl-i"><span class="skl-t"><span class="skl-x">Three web frameworks before you ship one</span></span><span class="skl-v">Pick one. Put it on a public URL.</span></li><li class="skl-i"><span class="skl-t"><span class="skl-x">Paid prompt-engineering bootcamps</span></span><span class="skl-v">The free docs and your own evals teach more.</span></li><li class="skl-i"><span class="skl-t"><span class="skl-x">Reading every agent framework’s docs</span></span><span class="skl-v">Learn the loop first. Frameworks are a thin layer on top.</span></li><li class="skl-i"><span class="skl-t"><span class="skl-x">Tutorials you follow without changing anything</span></span><span class="skl-v">Rebuild it with your own data and see what breaks.</span></li></ul>
+</div>
+</section>
+
+<section class="wall">
+<div class="wrap">
+<span class="eyebrow">Reviews</span>
+<h2 class="h2 sec-h reveal">Every resource gets a verdict, not just a link.</h2>
+<button class="btn btn-soft pressable" onClick="{{goLearn}}"><span>Read the reviews</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+</div>
+<div class="wall-rows deco" aria-hidden="true">
+<div class="wall-row">
+<sc-for list="{{wallA}}" as="r" hint-placeholder-count="6">
+<div class="card vc"><span class="{{r.cls}}"><span>{{r.label}}</span></span><p class="vc-t">{{r.title}}</p><p class="vc-p">{{r.provider}}</p></div>
+</sc-for>
+</div>
+<div class="wall-row">
+<sc-for list="{{wallB}}" as="r" hint-placeholder-count="6">
+<div class="card vc"><span class="{{r.cls}}"><span>{{r.label}}</span></span><p class="vc-t">{{r.title}}</p><p class="vc-p">{{r.provider}}</p></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="wrap sec">
+<h2 class="h2 sec-h reveal">How it works</h2>
+<ol class="hiw">
+<sc-for list="{{steps}}" as="st" hint-placeholder-count="3">
+<li class="card get reveal">
+<span class="hiw-n" data-pop="1" aria-hidden="true">{{st.n}}</span>
+<h3 class="h3">{{st.title}}</h3>
+<svg class="hiw-svg deco" aria-hidden="true" viewBox="0 0 120 10"><path data-draw="1" d="M3 6 C 20 1, 38 9, 58 5 S 100 2, 117 6"></path></svg>
+<p class="body2">{{st.text}}</p>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<section class="wrap sec who">
+<div class="who-head">
+<span class="eyebrow">Who is behind this</span>
+<h2 class="h2 reveal">Built by an ML engineer who ships at scale.</h2>
+<p class="lead reveal">Aman Jaiswal. 7 years building production ML, data and AI systems: risk models, recommenders, agent stacks, and the streaming data infrastructure under them.</p>
+</div>
+<div class="nums">
+<div class="stat2"><b>~<span data-cv="9">9</span>%</b><span>uplift in bad-loan recall on CRED’s risk models</span></div>
+<div class="stat2"><b><span data-cv="99.5">99.5</span>%</b><span>faster legal-invoice processing at Walmart</span></div>
+<div class="stat2"><b>$<span data-cv="200">200</span>K</b><span>saved a year migrating CRED’s lakehouse to Iceberg</span></div>
+<div class="stat2"><b><span data-cv="5">5</span>K+</b><span>Walmart stores covered by an ML loss-recovery system</span></div>
+</div>
+<div class="cos">
+<article class="card co reveal"><div class="co-top"><span class="co-name">Harness</span><span class="pill p-mint"><span>Now</span></span></div><p class="co-role">ML and data engineer</p><p class="co-d">Machine learning and data systems.</p></article>
+<article class="card co reveal"><div class="co-top"><span class="co-name">CRED</span><span class="pill p-gray"><span>Before</span></span></div><p class="co-role">ML and data engineer</p><p class="co-d">Credit risk, recommendations, AI agents and the data platform at petabyte scale.</p></article>
+<article class="card co reveal"><div class="co-top"><span class="co-name">Walmart</span><span class="pill p-gray"><span>Before</span></span></div><p class="co-role">Software Engineer III, data and ML</p><p class="co-d">Streaming, Spark and ML pipelines across 5,000+ stores.</p></article>
+</div>
+<div class="cta-row reveal" style="margin-top:28px">
+<button class="btn btn-soft btn-lg pressable" onClick="{{goAbout}}"><span>Read my background</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+<a class="btn btn-pink btn-lg pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+</div>
+</section>
+
+<section class="wrap close">
+<h2 class="h0 close-h reveal">Your path is two minutes away.</h2>
+<div class="cta-row reveal"><button class="btn btn-lg pressable" onClick="{{startAssess}}"><span>Find your path</span><svg class="i"><use href="#i-arrow-r"></use></svg></button></div>
+</section>
+
+<section class="wrap sec">
+<aside class="card follow reveal">
+<div class="follow-body"><p class="follow-h">Want ongoing updates as the field changes?</p><p class="follow-s">I break down AI engineering, production systems, and what is actually worth learning.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+</aside>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{isAssess}}" hint-placeholder-val="{{ false }}">
+<section class="wrap narrow">
+<div class="as-top">
+<button class="linkbtn pressable" onClick="{{assessBack}}"><svg class="i"><use href="#i-arrow-l"></use></svg><span>Back</span></button>
+<span class="micro">{{stepLabel}}</span>
+</div>
+<div class="dots" role="progressbar" aria-label="Assessment progress" aria-valuemin="1" aria-valuemax="5" aria-valuenow="{{stepNum}}">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="5"><span class="{{d.cls}}"></span></sc-for>
+</div>
+<h1 class="h2" id="aios-q">{{q.title}}</h1>
+<p class="q-hint">{{q.hint}}</p>
+<div class="opts" role="radiogroup" aria-labelledby="aios-q">
+<sc-for list="{{q.options}}" as="o" hint-placeholder-count="4">
+<button class="{{o.cls}} pressable" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}">
+<span class="{{o.chip}}"><svg class="i"><use href="{{o.icon}}"></use></svg></span>
+<span class="opt-t"><strong>{{o.label}}</strong><small>{{o.sub}}</small></span>
+<span class="opt-check"><svg class="i"><use href="#i-check"></use></svg></span>
+</button>
+</sc-for>
+</div>
+<div class="as-actions">
+<sc-if value="{{q.optional}}" hint-placeholder-val="{{ false }}"><button class="btn btn-ghost btn-lg pressable" style="flex:0 0 auto" onClick="{{assessSkip}}"><span>Skip</span></button></sc-if>
+<button class="btn btn-lg pressable" onClick="{{assessNext}}" disabled="{{nextDisabled}}"><span>{{nextLabel}}</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isResult}}" hint-placeholder-val="{{ false }}">
+<section class="wrap narrow" style="display:flex;flex-direction:column;gap:16px;padding-top:12px">
+<div class="card result-card reveal">
+<div class="ring-wrap">
+<svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="52"></circle><circle class="ring-fg" data-ring="1" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="0" transform="rotate(-90 60 60)"></circle></svg>
+<div class="ring-c"><span class="ring-num" data-count="{{plan.weeks}}"></span><span class="ring-unit">weeks</span></div>
+</div>
+<h1 class="h2">Your path is ready</h1>
+<p class="body2">{{plan.summary}}</p>
+<div class="stats">
+<div class="stat"><b data-count="{{plan.hours}}"></b><span>total hours</span></div>
+<div class="stat"><b>{{plan.hpwShort}}</b><span>hours a week</span></div>
+<div class="stat"><b data-count="{{plan.trimmed}}"></b><span>stages trimmed</span></div>
+</div>
+<button class="btn btn-lg pressable" onClick="{{goRoadmap}}"><span>See my roadmap</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+</div>
+<aside class="card follow reveal">
+<div class="follow-body"><p class="follow-h">This roadmap is the starting point.</p><p class="follow-s">I update recommendations as tools and patterns change. Follow @aman.jsw for the living version.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+</aside>
+</section>
+</sc-if>
+
+<sc-if value="{{isRoadmap}}" hint-placeholder-val="{{ false }}">
+<section class="wrap">
+<header class="vh">
+<p class="eyebrow reveal">Your plan</p>
+<h1 class="h1 sm reveal">Your AI Engineer Roadmap</h1>
+<p class="lead reveal">{{rm.subtitle}}</p>
+<button class="linkbtn pressable reveal" onClick="{{startAssess}}"><span>{{rm.retakeLabel}}</span></button>
+</header>
+<sc-if value="{{rm.noAssessment}}" hint-placeholder-val="{{ false }}">
+<div class="card callout reveal" style="margin-bottom:20px;background:var(--lav-wash)">
+<h2 class="h3">Take two minutes to personalise this</h2>
+<p class="body2">Below is the base path. Answer five quick questions and it gets trimmed to what you do not already know, with weeks that match your time.</p>
+<button class="btn pressable" onClick="{{startAssess}}"><span>Find your path</span><svg class="i"><use href="#i-arrow-r"></use></svg></button>
+</div>
+</sc-if>
+<div class="rm-grid">
+<ol class="timeline" id="aios-tl" aria-label="Roadmap stages">
+<span class="tl-line deco" aria-hidden="true"></span><span class="tl-fill deco" id="aios-tl-fill" aria-hidden="true"></span>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="5">
+<li class="tl-item reveal">
+<span class="{{s.dotCls}}" aria-hidden="true">{{s.n}}</span>
+<div class="{{s.cardCls}}">
+<button class="stage-head pressable" onClick="{{s.toggle}}" aria-expanded="{{s.expanded}}">
+<span class="{{s.chip}}"><svg class="i"><use href="{{s.icon}}"></use></svg></span>
+<span class="sh-t">
+<span class="sh-meta"><span class="pill p-gray"><span>{{s.stageLabel}}</span></span><span class="{{s.modeCls}}"><span>{{s.modeLabel}}</span></span><sc-if value="{{s.focus}}" hint-placeholder-val="{{ false }}"><span class="pill p-pink"><span>Your focus</span></span></sc-if></span>
+<strong class="sh-title">{{s.title}}</strong>
+<span class="sh-sub">{{s.sub}}</span>
+</span>
+<span class="chev"><svg class="i"><use href="#i-chev"></use></svg></span>
+</button>
+<div class="{{s.foldCls}}"><div><div class="fold-in">
+<p class="body2">{{s.blurb}}</p>
+<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{ false }}"><p class="modenote">{{s.note}}</p></sc-if>
+<div class="blk"><h3 class="blk-h">What you need to know</h3><ul class="bul"><sc-for list="{{s.know}}" as="k" hint-placeholder-count="4"><li>{{k.t}}</li></sc-for></ul></div>
+<div class="two">
+<div class="blk"><h3 class="blk-h">Best free resource</h3><button class="reslink pressable" onClick="{{s.freeGo}}"><b>{{s.freeTitle}}</b><small>{{s.freeMeta}}</small></button></div>
+<div class="blk"><h3 class="blk-h">Paid</h3>
+<sc-if value="{{s.hasPaid}}" hint-placeholder-val="{{ false }}"><button class="reslink pressable" onClick="{{s.paidGo}}"><b>{{s.paidTitle}}</b><small>{{s.paidMeta}}</small></button></sc-if>
+<sc-if value="{{s.hasPaidNote}}" hint-placeholder-val="{{ false }}"><p class="body2">{{s.paidNote}}</p></sc-if>
+</div>
+</div>
+<sc-if value="{{s.hasAlts}}" hint-placeholder-val="{{ true }}"><div class="blk"><h3 class="blk-h">Free alternatives on the same topic</h3><div class="alts"><sc-for list="{{s.alts}}" as="a" hint-placeholder-count="4"><a class="reslink alt" href="{{a.url}}" target="_blank" rel="noopener" aria-label="{{a.aria}}"><span class="alt-top"><span class="fav"><span class="fav-l">{{a.letter}}</span><img class="fav-i" src="{{a.icon}}" alt="" width="20" height="20" onError="{{a.iconErr}}"></span><b>{{a.title}}</b><span class="{{a.tagCls}}"><span>{{a.tag}}</span></span></span><small>{{a.meta}}</small><small class="alt-n">{{a.note}}</small></a></sc-for></div></div></sc-if>
+<sc-if value="{{s.hasPaidOpts}}" hint-placeholder-val="{{ true }}"><div class="blk"><h3 class="blk-h">Paid options, with prices</h3><div class="alts"><sc-for list="{{s.paidOpts}}" as="a" hint-placeholder-count="3"><a class="reslink alt" href="{{a.url}}" target="_blank" rel="noopener" aria-label="{{a.aria}}"><span class="alt-top"><span class="fav"><span class="fav-l">{{a.letter}}</span><img class="fav-i" src="{{a.icon}}" alt="" width="20" height="20" onError="{{a.iconErr}}"></span><b>{{a.title}}</b><span class="{{a.tagCls}}"><span>{{a.tag}}</span></span></span><small>{{a.meta}}</small><small class="alt-n">{{a.note}}</small></a></sc-for></div></div></sc-if>
+<div class="blk"><h3 class="blk-h">What to build</h3><p class="body2">{{s.build}}</p>
+<sc-if value="{{s.hasBuildLink}}" hint-placeholder-val="{{ false }}"><button class="linkbtn pressable" onClick="{{s.buildGo}}"><span>Open the project brief</span><svg class="i"><use href="#i-arrow-r"></use></svg></button></sc-if></div>
+<div class="blk"><h3 class="blk-h">You are competent when</h3><p class="body2">{{s.competent}}</p></div>
+<div class="blk"><h3 class="blk-h">Common mistakes and what to skip</h3><ul class="bul"><sc-for list="{{s.mistakes}}" as="m" hint-placeholder-count="3"><li>{{m.t}}</li></sc-for></ul></div>
+</div></div></div>
+</div>
+</li>
+</sc-for>
+</ol>
+<aside class="rm-side">
+<div class="card sum reveal">
+<h2 class="h3">At a glance</h2>
+<div class="sum-r"><p class="blk-h">Estimated time</p><p>{{rm.sumTime}}</p></div>
+<div class="sum-r"><p class="blk-h">Key projects</p><ul class="bul"><sc-for list="{{rm.projects}}" as="p" hint-placeholder-count="4"><li>{{p.t}}</li></sc-for></ul></div>
+<div class="sum-r"><p class="blk-h">Priority skills</p><ul class="tags"><sc-for list="{{rm.skills}}" as="k" hint-placeholder-count="6"><li class="tag">{{k.t}}</li></sc-for></ul></div>
+</div>
+<div class="card follow follow-col reveal">
+<div class="follow-body"><p class="follow-h">This roadmap is the starting point.</p><p class="follow-s">I update recommendations as tools and patterns change. Follow @aman.jsw for the living version.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+</div>
+<div class="actions reveal">
+<button class="btn pressable" onClick="{{goLearn}}"><span>Start learning</span></button>
+<button class="btn btn-soft pressable" onClick="{{goBuild}}"><span>See projects</span></button>
+<button class="btn btn-ghost pressable" onClick="{{goProgress}}"><span>Track progress</span></button>
+</div>
+</aside>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isLearn}}" hint-placeholder-val="{{ false }}">
+<section class="wrap">
+<header class="vh">
+<h1 class="h1 sm reveal">Learn</h1>
+<p class="lead reveal">Resources reviewed by an engineer. Not a scraped list.</p>
+</header>
+<div class="chips" role="group" aria-label="Filter by stage">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6"><button class="chip pressable" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}"><span>{{f.label}}</span></button></sc-for>
+</div>
+<sc-if value="{{showFeatured}}" hint-placeholder-val="{{ true }}">
+<h2 class="h3 sec-h" style="margin-top:12px">Featured reviews</h2>
+<div class="feat">
+<sc-for list="{{featured}}" as="r" hint-placeholder-count="4">
+<button class="card rescard pressable reveal" onClick="{{r.open}}">
+<span class="rc-top"><span class="{{r.verdictCls}}"><svg class="i"><use href="{{r.verdictIcon}}"></use></svg><span>{{r.verdictLabel}}</span></span><span class="pill p-gray"><span>{{r.price}}</span></span></span>
+<span class="rc-title"><span class="fav"><span class="fav-l">{{r.letter}}</span><img class="fav-i" src="{{r.icon}}" alt="" width="20" height="20" onError="{{r.iconErr}}"></span><span>{{r.title}}</span></span><span class="rc-prov">{{r.provider}}</span><span class="rc-line">{{r.line}}</span>
+<span class="rc-foot"><svg class="i"><use href="#i-clock"></use></svg><span>{{r.time}}</span></span>
+</button>
+</sc-for>
+</div>
+<h2 class="h3 sec-h" style="margin-top:24px">All resources</h2>
+</sc-if>
+<div class="grid">
+<sc-for list="{{resList}}" as="r" hint-placeholder-count="6">
+<button class="card rescard pressable reveal" onClick="{{r.open}}">
+<span class="rc-top"><span class="{{r.verdictCls}}"><svg class="i"><use href="{{r.verdictIcon}}"></use></svg><span>{{r.verdictLabel}}</span></span><span class="pill p-gray"><span>{{r.price}}</span></span></span>
+<span class="rc-title"><span class="fav"><span class="fav-l">{{r.letter}}</span><img class="fav-i" src="{{r.icon}}" alt="" width="20" height="20" onError="{{r.iconErr}}"></span><span>{{r.title}}</span></span><span class="rc-prov">{{r.provider}}</span><span class="rc-line">{{r.line}}</span>
+<span class="rc-foot"><svg class="i"><use href="#i-clock"></use></svg><span>{{r.time}}</span><sc-if value="{{r.hasStatus}}" hint-placeholder-val="{{ false }}"><span class="status">{{r.status}}</span></sc-if></span>
+</button>
+</sc-for>
+</div>
+<h2 class="h2 sec-h" style="margin-top:56px">How this list was built</h2>
+<div class="card how reveal">
+<p class="body2">I read the 2026 AI engineer roadmaps below, pulled out what they recommend, and kept what they agree on. Free and paid options are listed side by side with prices as the sources state them. Several roadmaps are written by people who sell courses, so I mark the source of each pick.</p>
+<h3 class="blk-h">Where they agree</h3>
+<ul class="bul"><sc-for list="{{agree}}" as="a" hint-placeholder-count="5"><li>{{a.t}}</li></sc-for></ul>
+<h3 class="blk-h">Where they disagree</h3>
+<ul class="bul"><sc-for list="{{differ}}" as="a" hint-placeholder-count="4"><li>{{a.t}}</li></sc-for></ul>
+</div>
+<h3 class="blk-h" style="margin-top:20px">Roadmaps and guides I read</h3>
+<div class="srcs">
+<sc-for list="{{srcs}}" as="a" hint-placeholder-count="8"><a class="reslink alt" href="{{a.url}}" target="_blank" rel="noopener" aria-label="{{a.aria}}"><span class="alt-top"><span class="fav"><span class="fav-l">{{a.letter}}</span><img class="fav-i" src="{{a.icon}}" alt="" width="20" height="20" onError="{{a.iconErr}}"></span><b>{{a.title}}</b><span class="{{a.tagCls}}"><span>{{a.tag}}</span></span></span><small>{{a.meta}}</small><small class="alt-n">{{a.note}}</small></a></sc-for>
+</div>
+<div class="card follow reveal" style="margin-top:28px">
+<div class="follow-body"><p class="follow-h">New reviews and what to skip next</p><p class="follow-s">I review new tools and patterns on Instagram. Follow to get them.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isTopic}}" hint-placeholder-val="{{ false }}">
+<section class="wrap narrow" style="display:flex;flex-direction:column;gap:18px;padding-top:8px">
+<div><button class="linkbtn pressable" onClick="{{goLearn}}"><svg class="i"><use href="#i-arrow-l"></use></svg><span>All resources</span></button></div>
+<header style="display:flex;flex-direction:column;gap:12px;align-items:flex-start" class="reveal">
+<div class="rc-top"><span class="{{t.verdictCls}}"><svg class="i"><use href="{{t.verdictIcon}}"></use></svg><span>{{t.verdictLabel}}</span></span><span class="pill p-gray"><span>{{t.price}}</span></span><span class="pill p-gray"><span>{{t.stageLabel}}</span></span></div>
+<h1 class="h1 sm">{{t.title}}</h1>
+<p class="lead">{{t.provider}}. {{t.line}}</p>
+<sc-if value="{{t.hasExt}}" hint-placeholder-val="{{ true }}"><a class="btn pressable" href="{{t.url}}" target="_blank" rel="noopener"><span>Open the resource</span><svg class="i"><use href="#i-ext"></use></svg></a></sc-if>
+</header>
+<div class="card reveal" style="display:flex;flex-direction:column;gap:14px">
+<h2 class="blk-h">Your status</h2>
+<div class="seg" role="group" aria-label="Your status">
+<button aria-pressed="{{t.learningPressed}}" onClick="{{t.setLearning}}"><span>In progress</span></button>
+<button aria-pressed="{{t.donePressed}}" onClick="{{t.setDone}}"><span>Done</span></button>
+</div>
+</div>
+<div class="card reveal">
+<h2 class="h3" style="margin-bottom:14px">Quick facts</h2>
+<div class="facts">
+<div class="blk"><h3 class="blk-h">Time</h3><p class="body2">{{t.time}}</p></div>
+<div class="blk"><h3 class="blk-h">Prerequisites</h3><p class="body2">{{t.prereq}}</p></div>
+<div class="blk"><h3 class="blk-h">Covers well</h3><ul class="bul"><sc-for list="{{t.covers}}" as="c" hint-placeholder-count="3"><li>{{c.t}}</li></sc-for></ul></div>
+<div class="blk"><h3 class="blk-h">Does not cover</h3><ul class="bul"><sc-for list="{{t.not}}" as="c" hint-placeholder-count="3"><li>{{c.t}}</li></sc-for></ul></div>
+</div>
+</div>
+<div class="card reveal">
+<h2 class="h3" style="margin-bottom:14px">The review</h2>
+<sc-for list="{{t.review}}" as="qa" hint-placeholder-count="5"><div class="qa"><h3 class="qa-q">{{qa.q}}</h3><p class="body2">{{qa.a}}</p></div></sc-for>
+</div>
+<div class="card reveal" style="display:flex;flex-direction:column;gap:10px">
+<h2 class="h3">Related</h2>
+<sc-if value="{{t.hasBuild}}" hint-placeholder-val="{{ false }}"><button class="reslink pressable" onClick="{{t.buildGo}}"><small>What to build after this</small><b>{{t.buildTitle}}</b></button></sc-if>
+<sc-if value="{{t.hasNext}}" hint-placeholder-val="{{ false }}"><button class="reslink pressable" onClick="{{t.nextGo}}"><small>Next recommended resource</small><b>{{t.nextTitle}}</b></button></sc-if>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isBuild}}" hint-placeholder-val="{{ false }}">
+<section class="wrap">
+<header class="vh">
+<h1 class="h1 sm reveal">Build</h1>
+<p class="lead reveal">Projects that prove judgement, not just tutorials.</p>
+</header>
+<div class="grid">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="4">
+<button class="card rescard pressable reveal" onClick="{{p.open}}">
+<span class="rc-top"><span class="pill p-gray"><span>{{p.stageLabel}}</span></span><sc-if value="{{p.focus}}" hint-placeholder-val="{{ false }}"><span class="pill p-pink"><span>Your focus</span></span></sc-if><sc-if value="{{p.complete}}" hint-placeholder-val="{{ false }}"><span class="pill p-mint"><svg class="i"><use href="#i-check"></use></svg><span>Complete</span></span></sc-if></span>
+<span class="rc-title">{{p.title}}</span>
+<span class="rc-line"><strong>Done when:</strong> <span>{{p.done}}</span></span>
+<span class="pbar" style="width:100%" aria-hidden="true"><i style="{{p.barStyle}}"></i></span>
+<span class="rc-foot"><svg class="i"><use href="#i-clock"></use></svg><span>{{p.hours}}</span><span class="status" style="background:var(--bg2);color:var(--ink2)">{{p.progressText}}</span></span>
+</button>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isProject}}" hint-placeholder-val="{{ false }}">
+<section class="wrap narrow" style="display:flex;flex-direction:column;gap:18px;padding-top:8px">
+<div><button class="linkbtn pressable" onClick="{{goBuild}}"><svg class="i"><use href="#i-arrow-l"></use></svg><span>All projects</span></button></div>
+<header style="display:flex;flex-direction:column;gap:12px;align-items:flex-start" class="reveal">
+<div class="rc-top"><span class="pill p-gray"><span>{{pj.stageLabel}}</span></span><span class="pill p-gray"><span>{{pj.hours}}</span></span></div>
+<h1 class="h1 sm">{{pj.title}}</h1>
+</header>
+<div class="card reveal"><h2 class="h3" style="margin-bottom:8px">What you will build</h2><p class="body2">{{pj.what}}</p></div>
+<div class="card reveal">
+<h2 class="h3" style="margin-bottom:4px">Acceptance criteria</h2>
+<p class="micro" style="margin-bottom:8px">{{pj.critText}}</p>
+<sc-for list="{{pj.criteria}}" as="c" hint-placeholder-count="5">
+<label class="chk"><input type="checkbox" class="chk-in" checked="{{c.checked}}" onChange="{{c.toggle}}"><span class="chk-box"><svg class="i"><use href="#i-check"></use></svg></span><span class="chk-t">{{c.text}}</span></label>
+</sc-for>
+</div>
+<div class="card reveal" style="display:flex;flex-direction:column;gap:12px">
+<h2 class="h3">Suggested stack</h2>
+<ul class="bul"><sc-for list="{{pj.stack}}" as="x" hint-placeholder-count="3"><li>{{x.t}}</li></sc-for></ul>
+<h2 class="h3" style="margin-top:6px">Common mistakes</h2>
+<ul class="bul"><sc-for list="{{pj.mistakes}}" as="x" hint-placeholder-count="3"><li>{{x.t}}</li></sc-for></ul>
+</div>
+<div class="actions reveal"><button class="btn btn-lg pressable" onClick="{{pj.toggleComplete}}"><svg class="i"><use href="#i-check"></use></svg><span>{{pj.completeLabel}}</span></button></div>
+<sc-if value="{{pj.showFollow}}" hint-placeholder-val="{{ false }}">
+<div class="card follow reveal"><div class="follow-body"><p class="follow-h">Shipped it. Nice.</p><p class="follow-s">Follow @aman.jsw for the next project brief and tool breakdowns.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a></div>
+</sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{isProgress}}" hint-placeholder-val="{{ false }}">
+<section class="wrap">
+<header class="vh">
+<h1 class="h1 sm reveal">Progress</h1>
+<p class="lead reveal">{{pg.line}}</p>
+</header>
+<div class="rm-grid">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div class="card reveal" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px">
+<div class="ring-wrap" style="width:140px;height:140px"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="52"></circle><circle class="ring-fg" data-ring="1" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="{{pg.ringOffset}}" transform="rotate(-90 60 60)"></circle></svg>
+<div class="ring-c"><span class="ring-num" style="font-size:36px" data-count="{{pg.pct}}"></span><span class="ring-unit">percent</span></div></div>
+<div style="flex:1 1 220px;display:flex;flex-direction:column;gap:6px"><p class="h3">{{pg.countLabel}}</p><p class="body2">{{pg.nextLine}}</p>
+<sc-if value="{{pg.hasNext}}" hint-placeholder-val="{{ false }}"><button class="linkbtn pressable" onClick="{{pg.nextGo}}"><span>Go to next milestone</span><svg class="i"><use href="#i-arrow-r"></use></svg></button></sc-if></div>
+</div>
+<sc-for list="{{pstages}}" as="s" hint-placeholder-count="5">
+<div class="card stage-card reveal">
+<button class="stage-head pressable" onClick="{{s.toggle}}" aria-expanded="{{s.expanded}}">
+<span class="{{s.chip}}"><svg class="i"><use href="{{s.icon}}"></use></svg></span>
+<span class="sh-t"><strong class="sh-title">{{s.title}}</strong><span class="sh-sub">{{s.sub}}</span><span class="pbar" aria-hidden="true"><i style="{{s.barStyle}}"></i></span></span>
+<span class="chev"><svg class="i"><use href="#i-chev"></use></svg></span>
+</button>
+<div class="{{s.foldCls}}"><div><div class="fold-in" style="gap:0">
+<sc-if value="{{s.skipped}}" hint-placeholder-val="{{ false }}"><p class="body2">Skipped in your plan. Nothing to track here.</p></sc-if>
+<ul>
+<sc-for list="{{s.items}}" as="it" hint-placeholder-count="4">
+<li class="{{it.cls}}">
+<sc-if value="{{it.isCheck}}" hint-placeholder-val="{{ false }}"><label class="chk" style="flex:1;padding:0"><input type="checkbox" class="chk-in" checked="{{it.checked}}" onChange="{{it.toggle}}"><span class="chk-box"><svg class="i"><use href="#i-check"></use></svg></span><span class="irow-t">{{it.label}}</span></label></sc-if>
+<sc-if value="{{it.isLink}}" hint-placeholder-val="{{ false }}"><span class="{{it.boxCls}}" aria-hidden="true"><svg class="i"><use href="#i-check"></use></svg></span><span class="irow-t">{{it.label}}</span><button class="linkbtn pressable" onClick="{{it.go}}"><span>{{it.kind}}</span></button></sc-if>
+</li>
+</sc-for>
+</ul>
+</div></div></div>
+</div>
+</sc-for>
+<div class="card reveal" style="display:flex;flex-direction:column;gap:10px">
+<h2 class="h3">Notes</h2>
+<textarea class="notes" aria-label="Your notes" placeholder="What clicked, what is stuck, what to try next." value="{{pg.notes}}" onChange="{{pg.onNotes}}"></textarea>
+</div>
+</div>
+<aside class="rm-side">
+<div class="stage deco reveal" style="aspect-ratio:1/.8" aria-hidden="true"><canvas id="aios-progress3d" class="stage-canvas"></canvas></div>
+<div class="card follow follow-col reveal"><div class="follow-body"><p class="follow-h">Keep going.</p><p class="follow-s">New breakdowns of what is worth learning land on @aman.jsw.</p></div>
+<a class="btn btn-pink pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a></div>
+</aside>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isAbout}}" hint-placeholder-val="{{ false }}">
+<section class="wrap narrow" style="display:flex;flex-direction:column;gap:18px;padding-top:12px">
+<div class="card reveal" style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:14px"><span class="avatar" style="width:64px;height:64px;font-size:28px" aria-hidden="true">A</span><div><h1 class="h2">I am Aman.</h1><p class="micro">ML and data engineer · Bangalore · @aman.jsw on Instagram</p></div></div>
+<p class="body2">I build machine learning, data and AI systems for a living, and I have done it for 7 years: risk models, recommenders, agent stacks, and the streaming and lakehouse infrastructure under them. I work in Python, Spark, Kafka, Flink and Iceberg, on AWS and GCP, at the scale where pipelines have to be cheap and reliable, not just correct. Now at Harness. Before that, CRED and Walmart.</p>
+<div class="cta-row">
+<a class="linkbtn" href="https://www.linkedin.com/in/amanjaiswalofficial" target="_blank" rel="noopener"><span>LinkedIn</span><svg class="i"><use href="#i-arrow-r"></use></svg></a>
+<a class="linkbtn" href="https://github.com/amanjaiswalofficial" target="_blank" rel="noopener"><span>GitHub</span><svg class="i"><use href="#i-arrow-r"></use></svg></a>
+<a class="linkbtn" href="https://medium.com/@amanjaiswalofficial" target="_blank" rel="noopener"><span>Medium</span><svg class="i"><use href="#i-arrow-r"></use></svg></a>
+</div>
+</div>
+
+<div class="card exp reveal">
+<div class="exp-h"><h2 class="exp-co">Harness</h2><span class="exp-when">Now</span></div>
+<p class="exp-r">ML and data engineer</p>
+</div>
+
+<div class="card exp reveal">
+<div class="exp-h"><h2 class="exp-co">CRED</h2><span class="exp-when">From Nov 2023</span></div>
+<p class="exp-r">Software Engineer, machine learning and data</p>
+<ul class="bul">
+<li>Lifted bad-loan recall by about 9% and extended default prediction to 24 months on the enterprise risk models, using bureau, app, device and temporal features, including new bureau embeddings.</li>
+<li>Raised look-to-click conversion by about 10% on personalised rewards, with recommenders built on temporal, behavioural and affluence features plus novelty and diversity.</li>
+<li>Architected the org’s AI engineering stack (Pydantic AI, LangGraph, LiteLLM). The agents cut daily operations and support time by over 45%.</li>
+<li>Led the Delta Lake to Iceberg migration: about $200K saved a year, with 50K+ tables processed every minute for real-time query resolution (SQS, Glue, StarRocks, Superset).</li>
+</ul>
+</div>
+
+<div class="card exp reveal">
+<div class="exp-h"><h2 class="exp-co">Walmart</h2><span class="exp-when">Oct 2021 – Oct 2023</span></div>
+<p class="exp-r">Software Engineer III, data and machine learning</p>
+<ul class="bul">
+<li>Cut legal-invoice turnaround by 99.5% with an automated system on Kafka, supervised learning and Kubernetes.</li>
+<li>Built an ML system to track and recover register losses across 5,000+ stores (Spark, MLflow, FastAPI): about $2–5M a year.</li>
+<li>Built ETL and ML pipelines (Airflow, GCP) behind Power BI dashboards that track returns across e-commerce and stores: up to about $3M a year.</li>
+</ul>
+</div>
+
+<div class="card exp reveal">
+<div class="exp-h"><h2 class="exp-co">TO THE NEW</h2><span class="exp-when">Feb 2019 – Sep 2021</span></div>
+<p class="exp-r">Software Engineer · clients PwC and Majid Al Futtaim</p>
+<ul class="bul"><li>Made a complex tax-filing system handle more than 200% extra load at the same cost, using concurrency.</li></ul>
+</div>
+
+<div class="card exp reveal">
+<h2 class="exp-co">What I work with</h2>
+<div class="skg"><span class="eyebrow">Machine learning</span><div class="sk2s"><span class="sk2">scikit-learn</span><span class="sk2">PyTorch</span><span class="sk2">MLflow</span><span class="sk2">Feature engineering</span><span class="sk2">Model serving</span><span class="sk2">Monitoring</span><span class="sk2">LangGraph</span><span class="sk2">Pydantic AI</span></div></div>
+<div class="skg"><span class="eyebrow">Data and streaming</span><div class="sk2s"><span class="sk2">Spark</span><span class="sk2">Kafka</span><span class="sk2">Flink</span><span class="sk2">Iceberg</span><span class="sk2">Airflow</span><span class="sk2">Databricks</span><span class="sk2">BigQuery</span><span class="sk2">StarRocks</span></div></div>
+<div class="skg"><span class="eyebrow">Backend and infra</span><div class="sk2s"><span class="sk2">Python</span><span class="sk2">FastAPI</span><span class="sk2">Django</span><span class="sk2">Redis</span><span class="sk2">Docker</span><span class="sk2">Kubernetes</span><span class="sk2">AWS</span><span class="sk2">GCP</span></div></div>
+</div>
+
+<div class="card reveal">
+<h2 class="h3" style="margin-bottom:8px">Why I built this</h2>
+<p class="body2">Most "become an AI engineer" advice is either a 47-hour course or a pile of links. This is the opposite: an opinionated path that says what to learn, what to build and what to skip, with the reasoning shown. I also write on Medium and LinkedIn and have guided juniors on Codementor.</p>
+</div>
+<div class="card reveal">
+<h2 class="h3" style="margin-bottom:10px">What this is not</h2>
+<ul class="bul"><li>Not a course aggregator. Every resource gets a verdict.</li><li>Not a certificate. Two deployed projects with honest write-ups beat a PDF.</li><li>Not a tool-of-the-week feed. Frameworks change; the stages hold.</li></ul>
+</div>
+<div class="card follow reveal" style="padding:28px;background:var(--pink-wash)"><div class="follow-body"><p class="follow-h" style="font-size:1.5rem">Follow for the living version</p><p class="follow-s">I break down AI engineering, production systems, and what is actually worth learning.</p></div>
+<a class="btn btn-pink btn-lg pressable" href="{{igUrl}}" target="_blank" rel="noopener" aria-label="Follow @aman.jsw on Instagram, opens in a new tab"><svg class="i"><use href="#i-ig"></use></svg><span>Follow @aman.jsw</span></a></div>
+</section>
+</sc-if>
+
+</div>
+</main>
+
+<footer class="wrap foot">
+<div class="foot-in">
+<p class="foot-t">AI Engineer OS · by Aman</p>
+<nav class="foot-nav" aria-label="Footer">
+<button class="linkbtn" onClick="{{goAbout}}"><span>About</span></button>
+<button class="linkbtn" onClick="{{goLearn}}"><span>Learn</span></button>
+<sc-if value="{{hasProgress}}" hint-placeholder-val="{{ false }}"><button class="linkbtn" onClick="{{goProgress}}"><span>Your progress</span></button></sc-if>
+</nav>
+<p class="micro">Everything you do here is saved on this device only.</p>
+</div>
+</footer>
+
+<sc-if value="{{showTabbar}}" hint-placeholder-val="{{ false }}">
+<nav class="tabbar" aria-label="Sections">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button class="{{t.cls}} pressable" onClick="{{t.go}}" aria-current="{{t.current}}"><svg class="i"><use href="{{t.icon}}"></use></svg><span>{{t.label}}</span></button>
+</sc-for>
+</nav>
+</sc-if>
+<sc-if value="{{showDock}}" hint-placeholder-val="{{ false }}">
+<div class="dock"><button class="btn btn-lg pressable" onClick="{{startAssess}}"><span>Start assessment</span><svg class="i"><use href="#i-arrow-r"></use></svg></button></div>
+</sc-if>
+
+<sc-if value="{{settingsOpen}}" hint-placeholder-val="{{ false }}">
+<button class="sheet-bg" onClick="{{closeSettings}}" aria-label="Close settings" tabindex="-1"></button>
+<div id="aios-sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="aios-sheet-h" onKeyDown="{{sheetKey}}">
+<div class="sheet-top"><h2 class="h3" id="aios-sheet-h">Sensory settings</h2><button id="aios-sheet-close" class="iconbtn" onClick="{{closeSettings}}" aria-label="Close settings"><svg class="i"><use href="#i-x"></use></svg></button></div>
+<p class="body2">Make the site feel right for you. Saved on this device.</p>
+<div class="set-row"><div><p class="set-l">Motion</p><p class="set-d">Calm turns off the 3D animation and most movement.</p></div>
+<div class="seg" role="group" aria-label="Motion"><sc-for list="{{segMotion}}" as="o" hint-placeholder-count="2"><button aria-pressed="{{o.pressed}}" onClick="{{o.pick}}"><span>{{o.label}}</span></button></sc-for></div></div>
+<div class="set-row"><div><p class="set-l">Theme</p><p class="set-d">Low-stim is muted and soft, with no bright colours.</p></div>
+<div class="seg" role="group" aria-label="Theme"><sc-for list="{{segTheme}}" as="o" hint-placeholder-count="3"><button aria-pressed="{{o.pressed}}" onClick="{{o.pick}}"><span>{{o.label}}</span></button></sc-for></div></div>
+<div class="set-row"><div><p class="set-l">Font</p><p class="set-d">Readable uses Atkinson Hyperlegible, built for clear letter shapes.</p></div>
+<div class="seg" role="group" aria-label="Font"><sc-for list="{{segFont}}" as="o" hint-placeholder-count="2"><button aria-pressed="{{o.pressed}}" onClick="{{o.pick}}"><span>{{o.label}}</span></button></sc-for></div></div>
+<div class="set-row"><div><p class="set-l">Decorations</p><p class="set-d">Simple hides icons, the 3D scene and extra visuals.</p></div>
+<div class="seg" role="group" aria-label="Decorations"><sc-for list="{{segSimple}}" as="o" hint-placeholder-count="2"><button aria-pressed="{{o.pressed}}" onClick="{{o.pick}}"><span>{{o.label}}</span></button></sc-for></div></div>
+<button class="btn pressable" onClick="{{closeSettings}}"><span>Done</span></button>
+</div>
+</sc-if>
+
+<div class="toast" role="status" aria-live="polite"><sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}"><span class="toast-in">{{toast}}</span></sc-if></div>
+<div class="fx" aria-hidden="true"><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span><span class="fx-dot"></span></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
+const IG_URL = 'https://www.instagram.com/aman.jsw/';
+const KEYS = { a: 'ai-engineer-os-assessment', p: 'ai-engineer-os-progress', s: 'ai-engineer-os-settings' };
+const MEM = {};
+let LS;
+function ls() {
+  if (LS !== undefined) return LS;
+  try { const k = '__aios'; window.localStorage.setItem(k, '1'); window.localStorage.removeItem(k); LS = window.localStorage; } catch (e) { LS = null; }
+  return LS;
+}
+function readJSON(key, fb) { try { const s = ls(); const raw = s ? s.getItem(key) : MEM[key]; return raw ? JSON.parse(raw) : fb; } catch (e) { return fb; } }
+function writeJSON(key, val) { try { const raw = JSON.stringify(val); const s = ls(); if (s) s.setItem(key, raw); else MEM[key] = raw; } catch (e) { /* storage unavailable */ } }
+function mm(q) { try { return !!(window.matchMedia && window.matchMedia(q).matches); } catch (e) { return false; } }
+
+const TONES = ['t-lav', 't-mint', 't-peach', 't-pink', 't-blue'];
+const TONE_NAMES = ['mint', 'peach', 'lav', 'pink', 'blue'];
+
+const alt = (t, p, u, price, kind, via, note) => ({ t, p, u, price, kind, via, note });
+const STAGES = [
+  { id: 's1', title: 'Engineering foundations', short: 'Foundations', icon: '#i-code', hours: 16,
+    blurb: 'Ship a small, typed, tested service end to end. Everything later sits on this.',
+    know: ['Python you can read cold: typing, dataclasses or Pydantic, async basics', 'HTTP APIs, JSON, retries and timeouts', 'Git, pytest, Docker and one place to deploy', 'A test harness that copes with non-deterministic output, because evals start here', 'Enough SQL to answer a question without an ORM'],
+    free: 'fastapi', paid: null, paidNote: 'Skip paid courses here. The docs plus one small deployed service teach more than any bootcamp module.',
+    build: 'A typed FastAPI service with tests, a Dockerfile and a public URL.', buildSlug: null,
+    competent: 'You can take an empty folder to a deployed, tested endpoint without following a tutorial.',
+    mistakes: ['Starting a 40-hour "Python from zero" course when you can already code', 'Learning three web frameworks instead of shipping one', 'Skipping tests because it is "just a prototype"'],
+    skills: ['Python', 'APIs', 'Docker', 'Testing'],
+    alts: [
+      alt('Python for Everybody', 'Charles Severance', 'https://www.py4e.com/', 'Free', 'Course', 'KDnuggets, Scrimba', 'Slow and gentle. Skip it if you write Python daily.'),
+      alt('CS50 Introduction to Programming with Python', 'Harvard', 'https://cs50.harvard.edu/python', 'Free', 'Course', 'KDnuggets, Scrimba', 'Tighter than py4e, with problem sets that make you type the code.'),
+      alt('Docker curriculum', 'docker-curriculum.com', 'https://docker-curriculum.com/', 'Free', 'Tutorial', 'KDnuggets', 'Enough Docker to containerise and ship one service. Do not go deeper yet.'),
+      alt('Test-Driven Development with Python', 'Harry Percival', 'https://www.obeythetestinggoat.com/pages/book.html', 'Book', 'Book', 'KDnuggets', 'Learn testing now. LLM apps are harder to test than normal software, so the habit pays twice.')
+    ],
+    paidOpts: [
+      alt('AI Engineer Path', 'Scrimba', 'https://scrimba.com/the-ai-engineer-path-c02v', 'Paid · Pro from $24.50/mo billed annually', 'Interactive course', 'Scrimba', 'About 11 hours, JavaScript-first. Fine if you are a web dev. The seller wrote the article that recommends it.'),
+      alt('AI Engineer in Python path', 'Dataquest', 'https://www.dataquest.io/path/ai-engineer/', 'Paid · price not shown in sources', 'Guided path', 'Dataquest', 'About 207 hours over 33 courses, roughly 11 months at 5 hours a week. Only worth it if you need the structure.')
+    ],
+    checks: [{ id: 'chk-0', text: 'I can take an empty folder to a deployed, tested endpoint.' }] },
+  { id: 's2', title: 'ML and deep learning', short: 'ML', icon: '#i-brain', hours: 24,
+    blurb: 'Enough ML to judge a model: data splits, metrics, embeddings and why things fail.',
+    know: ['Train, validation and test splits, and what leakage looks like', 'Precision, recall, calibration, and why accuracy lies', 'Gradient descent, overfitting and regularisation', 'Embeddings and the idea behind attention', 'PyTorch basics'],
+    free: 'fastai', paid: null, paidNote: 'Skip paid ML specialisations unless you want the theory. You need working intuition, not a transcript.',
+    build: 'A classifier or ranker with a held-out set, a baseline and a written error analysis.', buildSlug: null,
+    competent: 'You can explain why a metric moved and spot leakage in someone else\'s notebook.',
+    mistakes: ['Chasing leaderboards', 'Deriving backprop before training a single model', 'Training from scratch when fine-tuning or prompting would do'],
+    skills: ['PyTorch', 'Metrics', 'Embeddings'],
+    alts: [
+      alt('Machine Learning Crash Course', 'Google', 'https://developers.google.com/machine-learning/crash-course', 'Free', 'Course', 'dataskew', 'The fastest honest pass over splits, metrics and overfitting.'),
+      alt('Neural networks playlist', '3Blue1Brown', 'https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi', 'Free', 'Video', 'dataskew', 'Build the picture before the code. Short and worth it.'),
+      alt('The Illustrated Transformer', 'Jay Alammar', 'https://jalammar.github.io/illustrated-transformer/', 'Free', 'Article', 'dataskew, Louis Bouchard', 'Read it once so attention stops being a black box.'),
+      alt('Hugging Face LLM Course', 'Hugging Face', 'https://huggingface.co/learn/llm-course/chapter1/1', 'Free', 'Course', 'Louis Bouchard', 'Runnable notebooks, text-heavy. Needs self-discipline.'),
+      alt('MIT 6.S191 Introduction to Deep Learning', 'MIT', 'https://introtodeeplearning.com/', 'Free', 'Lectures', 'dataskew', 'Heavier than you need. Take it only if you like lectures.')
+    ],
+    paidOpts: [
+      alt('Machine Learning Specialization', 'Andrew Ng · Coursera', 'https://www.coursera.org/specializations/machine-learning-introduction', 'Free to audit · certificate $49/mo', 'Course', 'Scrimba', 'About 95 hours. The standard for fundamentals, with nothing on LLM engineering. Audit it, do not pay for the certificate.'),
+      alt('Hands-On Large Language Models', 'Alammar and Grootendorst', 'https://www.llm-book.com/', 'Paid book', 'Book', 'Louis Bouchard', 'A good bridge from classical ML to LLMs, if you prefer a book to videos.')
+    ],
+    checks: [{ id: 'chk-1', text: 'I can explain why a metric moved and spot leakage.' }] },
+  { id: 's3', title: 'LLM engineering', short: 'LLMs', icon: '#i-sparkles', hours: 30,
+    blurb: 'Prompts, structured outputs, tools, retrieval and agents, with the judgement to know when not to.',
+    know: ['Prompting as interface design: system prompts and structured outputs', 'Tool calling and the agent loop', 'Embeddings, chunking, hybrid search and reranking', 'What goes in the context window, and what does not', 'MCP: what it is and when exposing a tool through it is worth the work', 'When a fixed workflow beats an agent'],
+    free: 'effective-agents', paid: null, paidNote: 'You do not need to pay for this stage. If you want a live cohort for accountability, see the paid options below, and check the syllabus covers evals and deployment, not only agents.',
+    build: 'Document Q&A with citations and a 20-question eval, then a tool-calling agent with step limits.', buildSlug: 'doc-qa',
+    competent: 'Given a bad answer, you can tell whether retrieval, the prompt or the model caused it.',
+    mistakes: ['Framework-hopping every week', 'Fine-tuning before you have evals', 'Shopping for vector databases before you have a retrieval metric'],
+    skills: ['RAG', 'Tool calling', 'Structured outputs', 'Prompt design'],
+    alts: [
+      alt('Anthropic Academy', 'Anthropic', 'https://www.anthropic.com/learn', 'Free', 'Courses', 'Louis Bouchard', 'Official courses on the API, MCP and Claude Code. Check each course page for what it covers.'),
+      alt('Contextual Retrieval', 'Anthropic', 'https://www.anthropic.com/news/contextual-retrieval', 'Free', 'Article', 'Louis Bouchard', 'The clearest short piece on why naive chunking loses context, and what to do about it.'),
+      alt('Writing effective tools for agents', 'Anthropic Engineering', 'https://www.anthropic.com/engineering/writing-tools-for-agents', 'Free', 'Article', 'Louis Bouchard', 'Most agent bugs are tool-design bugs. Read this before you add a fifth tool.'),
+      alt('12-Factor Agents', 'Dex Horthy', 'https://github.com/humanlayer/12-factor-agents', 'Free', 'Repo', 'Louis Bouchard', 'Opinionated, and mostly right: own your prompts, control flow and context.'),
+      alt('MCP course', 'Hugging Face', 'https://huggingface.co/learn/mcp-course/', 'Free', 'Course', 'Louis Bouchard', 'MCP now shows up in nearly every 2026 roadmap. Learn the protocol once.'),
+      alt('Large Language Model Agents', 'UC Berkeley', 'https://llmagents-learning.org/f24', 'Free', 'Lectures', 'Scrimba', 'About 24 hours of research-level depth. Great if you like theory, slow if you want to ship.')
+    ],
+    paidOpts: [
+      alt('Agentic AI', 'Andrew Ng · DeepLearning.AI', 'https://www.deeplearning.ai/courses/agentic-ai', 'Free to audit · Pro $25/mo billed annually or $30/mo', 'Course', 'DeepLearning.AI', 'About 10 hours. Auditing gives you the videos and forum. Quizzes, labs and the certificate need Pro.'),
+      alt('Building AI Agents for Enterprise', 'Beyond Vectors', 'https://beyondvectors.com/', 'Paid · ₹50,000', 'Live cohort', 'Beyond Vectors', 'Six weekends, live. Covers RAG, tools, evals and production. The October 2026 cohort has started, so check for the next one.'),
+      alt('Learn AI Agents and Learn Context Engineering', 'Scrimba', 'https://scrimba.com/learn-ai-agents-c034', 'Paid · Pro from $24.50/mo billed annually', 'Interactive course', 'Scrimba', 'About 3 hours in JavaScript. Narrow, so use it as a supplement.')
+    ],
+    checks: [{ id: 'chk-2', text: 'I can trace a bad answer to retrieval, the prompt or the model.' }] },
+  { id: 's4', title: 'Production AI', short: 'Production', icon: '#i-server', hours: 30,
+    blurb: 'Evals, tracing, cost and latency. The part that separates a demo from a product.',
+    know: ['Error analysis, golden sets and the pitfalls of LLM judges', 'Tracing and observability for LLM calls', 'Cost and latency budgets, caching and fallbacks', 'Guardrails and failure modes', 'Prompt versioning and regression tests in CI', 'Testing for prompt injection and unauthorised tool use'],
+    free: 'hamel-evals', paid: 'evals-maven', paidNote: '',
+    build: 'Production RAG with tracing, cost and latency tracking, and an eval that runs in CI.', buildSlug: 'prod-rag',
+    competent: 'You can change a prompt and know within ten minutes whether you broke something.',
+    mistakes: ['Building dashboards before you have an eval', 'Trusting an LLM judge nobody has checked against human labels', 'Leaving cost and latency for later'],
+    skills: ['Evals', 'Observability', 'Cost control', 'CI for prompts'],
+    alts: [
+      alt('A Field Guide to Rapidly Improving AI Products', 'Hamel Husain', 'https://hamel.dev/blog/posts/field-guide/', 'Free', 'Article', 'Louis Bouchard', 'The error-analysis workflow in practice. Read it right after the evals post.'),
+      alt('Ragas', 'Ragas', 'https://docs.ragas.io/en/stable/', 'Free · open source', 'Tool', 'dataskew, Louis Bouchard', 'Useful metrics for RAG. Check them against your own labels before trusting them.'),
+      alt('Arize Phoenix', 'Arize', 'https://arize.com/docs/phoenix', 'Free · open source', 'Tool', 'Louis Bouchard', 'Tracing and evals you can run locally. A good first observability tool.'),
+      alt('Langfuse prompt management', 'Langfuse', 'https://langfuse.com/docs/prompts/get-started', 'Check site', 'Tool', 'dataskew', 'Prompt versioning plus traces. One of several; pick one and stop shopping.'),
+      alt('OWASP Top 10 for LLM Applications', 'OWASP', 'https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/', 'Free', 'Reference', 'Louis Bouchard', 'Prompt injection and unsafe tool use are the failures you will actually meet.'),
+      alt('MLOps Zoomcamp', 'DataTalksClub', 'https://github.com/DataTalksClub/mlops-zoomcamp', 'Free', 'Course', 'Scrimba', 'About 9 weeks on deployment, monitoring and CI/CD. Classic MLOps rather than LLMs, but the production habits transfer.')
+    ],
+    paidOpts: [
+      alt('AI Evals For Engineers and PMs', 'Hamel Husain and Shreya Shankar · Maven', 'https://maven.com/parlance-labs/evals', 'Paid · $4,400', 'Live cohort', 'Maven', 'The most direct course on evals. Expensive. Do the free posts and previews first.'),
+      alt('AI Engineering Cohort', 'Gaurav Sen and Tanishq Singh', 'https://aiengg.dev/', 'Paid · $2,200', 'Live cohort', 'aiengg.dev', 'Six weeks: agentic design, retrieval, evals and security, CI/CD, observability, and a capstone.'),
+      alt('AI Engineering', 'Chip Huyen · O\'Reilly', 'https://www.oreilly.com/library/view/ai-engineering/9781098166298/', 'Paid book', 'Book', 'dataskew, Louis Bouchard', 'The best single reference. Read the evaluation chapters first.')
+    ],
+    checks: [{ id: 'chk-3', text: 'I can change a prompt and know within ten minutes if I broke something.' }] },
+  { id: 's5', title: 'Portfolio and interviews', short: 'Portfolio', icon: '#i-briefcase', hours: 20,
+    blurb: 'Turn two projects into proof: public URLs, honest write-ups, and a story you can tell.',
+    know: ['How to scope and write up a project: problem, approach, tradeoffs, failures', 'LLM system design questions', 'Reading a job post for real AI engineering work', 'Talking through your eval results with numbers', 'A short recorded walkthrough of one project, which most candidates skip'],
+    free: 'applied-llms', paid: 'bootcamps', paidNote: '',
+    build: 'Polish two projects: public URL, README with tradeoffs, and a short write-up of what failed.', buildSlug: null,
+    competent: 'You can walk through a project\'s failure modes unprompted, with numbers.',
+    mistakes: ['Ten half-finished repos', 'A README that only lists features', 'Collecting certificates instead of shipping'],
+    skills: ['Writing', 'System design', 'Communication'],
+    alts: [
+      alt('AI Engineer projects', 'roadmap.sh', 'https://roadmap.sh/ai-engineer/projects', 'Check site', 'Project ideas', 'roadmap.sh', 'Starter briefs. Pick one and make it yours with real data.'),
+      alt('Start AI Engineering', 'Louis Bouchard', 'https://github.com/louisfb01/start-ai-engineering', 'Free', 'Repo', 'Louis Bouchard', 'A curated list with difficulty ratings and project ideas.'),
+      alt('Designing Real-World AI Agents workshop', 'Paul Iusztin', 'https://github.com/iusztinpaul/designing-real-world-ai-agents-workshop', 'Free', 'Repo', 'Louis Bouchard', 'A worked example of an agent project structured like production.'),
+      alt('Example capstone: ReconAI', 'Public repo', 'https://github.com/tamilarasu-ravi/recon-ai', 'Free', 'Repo', 'aiengg.dev', 'One public capstone from the aiengg.dev cohort. Use it to see what a finished write-up looks like.'),
+      alt('AI engineer interview guide', 'Interview Query', 'https://www.interviewquery.com/p/ai-engineer-interview-questions', 'Check site', 'Guide', 'Interview Query', 'A vendor guide, but useful to see the question shapes.')
+    ],
+    paidOpts: [],
+    checks: [{ id: 'chk-4a', text: 'Two projects have a public URL and a README with tradeoffs.' }, { id: 'chk-4b', text: 'I can walk through a project\'s failure modes with numbers.' }] }
+];
+
+const MODE_NOTES = [
+  { skip: 'You already ship services, so skip this stage. Use the docs as a reference if a tool is unfamiliar.', skim: 'Skim: confirm you can containerise, test and deploy a small service, then move on.' },
+  { skip: 'You have shipped models to production. Skip this stage and dip into embeddings later if you need to.', skim: 'Skim: refresh metrics and embeddings. Skip the from-scratch material.' },
+  {}, {},
+  { skim: 'Skim: keep this light. A short write-up per project is enough.' }
+];
+
+const QUESTIONS = [
+  { id: 'bg', title: 'Where are you starting from?', hint: 'Pick the closest one.', optional: false, options: [
+    { v: 'beginner', label: 'Complete beginner', sub: 'New to programming', icon: '#i-leaf' },
+    { v: 'python', label: 'Python developer', sub: 'Comfortable with scripts and small apps', icon: '#i-code' },
+    { v: 'ds', label: 'Data scientist / ML engineer', sub: 'You train and evaluate models today', icon: '#i-brain' },
+    { v: 'swe', label: 'Software engineer', sub: 'You ship production services', icon: '#i-server' },
+    { v: 'other', label: 'Something else', sub: 'Adjacent field or career switch', icon: '#i-compass' }] },
+  { id: 'goal', title: 'What are you aiming for?', hint: 'This decides what gets emphasised.', optional: false, options: [
+    { v: 'job', label: 'My first AI engineering job', sub: 'Portfolio and interviews matter most', icon: '#i-briefcase' },
+    { v: 'switch', label: 'Transition from software engineering', sub: 'Use what you already know', icon: '#i-route' },
+    { v: 'better', label: 'Get better at production AI', sub: 'Evals, cost and reliability', icon: '#i-gauge' },
+    { v: 'products', label: 'Build AI products', sub: 'Ship things people use', icon: '#i-rocket' },
+    { v: 'explore', label: 'Explore, not sure yet', sub: 'Keep it light', icon: '#i-compass' }] },
+  { id: 'ml', title: 'How much ML have you done?', hint: 'Be honest. It saves you time.', optional: false, options: [
+    { v: 'none', label: 'None', sub: 'Never trained a model', icon: '#i-leaf' },
+    { v: 'some', label: 'Some ML experience', sub: 'Courses or notebooks', icon: '#i-book' },
+    { v: 'projects', label: 'Built ML projects', sub: 'End to end, not in production', icon: '#i-hammer' },
+    { v: 'prod', label: 'Worked on production ML', sub: 'Models serving real traffic', icon: '#i-server' }] },
+  { id: 'time', title: 'How much time can you give each week?', hint: 'Optional. We assume 5–10 hours if you skip.', optional: true, options: [
+    { v: 'lt5', label: 'Under 5 hours', sub: 'Slow and steady', icon: '#i-clock' },
+    { v: '5-10', label: '5–10 hours', sub: 'A realistic side-project pace', icon: '#i-clock' },
+    { v: '10-15', label: '10–15 hours', sub: 'Serious momentum', icon: '#i-clock' },
+    { v: '15+', label: '15+ hours', sub: 'Close to full time', icon: '#i-clock' }] },
+  { id: 'focus', title: 'Anything you want to go deeper on?', hint: 'Optional. It flags the stages and projects to prioritise.', optional: true, options: [
+    { v: 'rag', label: 'RAG and retrieval', sub: 'Search, chunking, citations', icon: '#i-layers' },
+    { v: 'agents', label: 'Agents and tool calling', sub: 'Loops, tools, limits', icon: '#i-sparkles' },
+    { v: 'evals', label: 'Evaluation and observability', sub: 'Know when it breaks', icon: '#i-circle-check' },
+    { v: 'deploy', label: 'Deployment and production', sub: 'Cost, latency, reliability', icon: '#i-server' },
+    { v: 'balanced', label: 'Balanced', sub: 'A bit of everything', icon: '#i-compass' }] }
+];
+const DEFAULTS = { bg: 'python', goal: 'job', ml: 'none', time: '5-10', focus: 'balanced' };
+const HPW = { lt5: 4, '5-10': 7.5, '10-15': 12.5, '15+': 18 };
+const HPW_LABEL = { lt5: 'Under 5 h/week', '5-10': '5–10 h/week', '10-15': '10–15 h/week', '15+': '15+ h/week' };
+const HPW_SHORT = { lt5: '<5', '5-10': '5–10', '10-15': '10–15', '15+': '15+' };
+const BG_LABEL = { beginner: 'Complete beginner', python: 'Python developer', ds: 'Data / ML background', swe: 'Software engineer', other: 'Career switcher' };
+const GOAL_LABEL = { job: 'aiming for a first AI role', switch: 'moving from software engineering', better: 'getting better at production AI', products: 'building AI products', explore: 'exploring' };
+const FOCUS_LABEL = { rag: 'focus on retrieval', agents: 'focus on agents', evals: 'focus on evals', deploy: 'focus on deployment' };
+const FOCUS_STAGE = { rag: 2, agents: 2, evals: 3, deploy: 3 };
+
+function makePlan(ans) {
+  const a = Object.assign({}, DEFAULTS, ans || {});
+  const modes = ['full', 'full', 'full', 'full', 'full'];
+  if (a.bg === 'swe') modes[0] = 'skip'; else if (a.bg === 'python' || a.bg === 'ds') modes[0] = 'skim';
+  if (a.ml === 'prod') modes[1] = 'skip'; else if (a.ml === 'projects' || a.bg === 'ds') modes[1] = 'skim';
+  if (a.goal === 'better' || a.goal === 'explore') modes[4] = 'skim';
+  const hpw = HPW[a.time] || 7.5;
+  let cursor = 0, total = 0, trimmed = 0;
+  const stages = STAGES.map((s, i) => {
+    let h = s.hours;
+    if (i === 0 && a.bg === 'beginner') h = Math.round(h * 1.5);
+    if (i === 1 && a.ml === 'none' && a.bg !== 'ds') h = Math.round(h * 1.2);
+    const f = modes[i] === 'skip' ? 0 : modes[i] === 'skim' ? 0.35 : 1;
+    const hours = Math.round(h * f);
+    const weeks = f === 0 ? 0 : Math.max(1, Math.ceil(hours / hpw - 0.001));
+    const start = cursor + 1; cursor += weeks; total += hours;
+    if (modes[i] !== 'full') trimmed++;
+    const weeksLabel = weeks === 0 ? 'Skipped' : weeks === 1 ? 'Week ' + start : 'Weeks ' + start + '–' + cursor;
+    return { i, mode: modes[i], hours, weeks, weeksLabel, hoursLabel: f === 0 ? 'Skipped' : '≈ ' + hours + ' h' };
+  });
+  const focusLabel = FOCUS_LABEL[a.focus] ? ' · ' + FOCUS_LABEL[a.focus] : '';
+  return {
+    a, stages, weeks: cursor, hours: total, trimmed, hpw, hpwShort: HPW_SHORT[a.time] || '5–10',
+    summary: cursor + ' weeks at ' + (HPW_LABEL[a.time] || '5–10 h/week').replace('h/week', 'hours a week').toLowerCase().replace(/^./, (c) => c.toUpperCase()).replace(/^(.)/, '$1') + '. ' + (BG_LABEL[a.bg] || '') + ', ' + GOAL_LABEL[a.goal] + '.',
+    subtitle: cursor + ' weeks · ' + (BG_LABEL[a.bg] || '') + ' · ' + GOAL_LABEL[a.goal] + focusLabel,
+    focusStage: FOCUS_STAGE[a.focus] === undefined ? -1 : FOCUS_STAGE[a.focus]
+  };
+}
+
+function fromHash() {
+  try {
+    const h = (window.location.hash || '').replace(/^#\/?/, '');
+    if (!h) return null;
+    const p = h.split('/');
+    if (['assess', 'result', 'roadmap', 'learn', 'build', 'progress', 'about'].indexOf(p[0]) < 0) return null;
+    if (p[0] === 'learn' && p[1]) return { view: 'topic', param: p[1] };
+    if (p[0] === 'build' && p[1]) return { view: 'project', param: p[1] };
+    return { view: p[0], param: null };
+  } catch (e) { return null; }
+}
+function toHash(view, param) {
+  if (view === 'topic') return '#/learn/' + param;
+  if (view === 'project') return '#/build/' + param;
+  return view === 'home' ? '#/' : '#/' + view;
+}
+const VERDICTS = {
+  start: { label: 'Start here', cls: 'p-pink', icon: '#i-bookmark' },
+  worth: { label: 'Worth your time', cls: 'p-mint', icon: '#i-circle-check' },
+  pair: { label: 'Pair with a project', cls: 'p-lav', icon: '#i-hammer' },
+  optional: { label: 'Optional depth', cls: 'p-blue', icon: '#i-layers' },
+  skim: { label: 'Skim it', cls: 'p-peach', icon: '#i-eye' },
+  skip: { label: 'Skip for now', cls: 'p-gray', icon: '#i-x' }
+};
+const RESOURCES = [
+  { slug: 'fastapi', title: 'FastAPI tutorial', provider: 'FastAPI docs', url: 'https://fastapi.tiangolo.com/tutorial/', price: 'Free', stage: 0, verdict: 'worth',
+    line: 'The shortest route from writing scripts to shipping services.', time: '≈ 6–8 h', prereq: 'Basic Python: functions, classes, pip.',
+    covers: ['Routing, request and response models', 'Validation with Pydantic types', 'Dependency injection and background tasks', 'Testing with the built-in test client'],
+    not: ['Deploying and scaling a service', 'Observability and on-call habits', 'Anything about models or LLMs'],
+    review: [['Is this worth the time?', 'Yes. Work through the tutorial in order and skip the advanced guide until you need it. The Pydantic habits you pick up here are the same ones that make structured LLM output reliable later.'], ['Too theoretical?', 'No. It is hands-on from the first page.'], ['Does it teach production engineering?', 'Partly. Validation and testing, yes. Deployment, logging and monitoring are on you, and come up in Stage 4.'], ['Who should skip it?', 'Anyone who already ships Python services in FastAPI, Flask or Django.'], ['What next?', 'Put your service in a container, deploy it somewhere with a public URL, then start Stage 2.']],
+    build: 'extraction', next: 'fastai' },
+  { slug: 'fastai', title: 'Practical Deep Learning for Coders', provider: 'fast.ai', url: 'https://course.fast.ai/', price: 'Free', stage: 1, verdict: 'worth',
+    line: 'Top-down: you train real models in lesson one and meet the theory when you need it.', time: '≈ 20–30 h with the notebooks', prereq: 'Python and comfort with notebooks.',
+    covers: ['Training and fine-tuning models end to end', 'Why validation sets matter and how people fool themselves', 'Reading training curves and debugging a model that will not learn'],
+    not: ['Running models reliably in production', 'LLM application patterns such as RAG and tool calling', 'Evaluating generative systems'],
+    review: [['Is this worth 20+ hours?', 'Yes, if you have never trained a model. It builds instincts about data, validation and failure that carry straight over to LLM work.'], ['Too theoretical?', 'No. It leans practical on purpose. If you want the internals, pair it with Karpathy\'s Zero to Hero.'], ['Does it teach production engineering?', 'Not really. You finish able to train and ship a small model, not to operate one.'], ['Who should skip it?', 'Anyone who has already trained and debugged models in PyTorch. Go straight to Stage 3.'], ['What next?', 'Do the Stage 2 build: a classifier with a held-out set and a written error analysis. Then start the LLM stage.']],
+    build: null, next: 'llm-intro' },
+  { slug: 'karpathy-zero', title: 'Neural Networks: Zero to Hero', provider: 'Andrej Karpathy', url: 'https://karpathy.ai/zero-to-hero.html', price: 'Free', stage: 1, verdict: 'optional',
+    line: 'Build backprop, a small language model and a GPT from scratch, on camera.', time: '≈ 15–20 h plus coding along', prereq: 'Python and some calculus intuition.',
+    covers: ['Backpropagation and autograd from first principles', 'Training a character-level language model', 'Building a transformer and a tokenizer'],
+    not: ['Using LLMs through APIs', 'Retrieval, agents or evaluation', 'Production concerns'],
+    review: [['Is this worth the time?', 'Worth it if you want to know what is happening inside a model. It will not make you faster at shipping an AI feature, so treat it as depth, not a prerequisite.'], ['Too theoretical?', 'Theoretical in the good sense: you write the code, so it sticks. It is long.'], ['Does it teach production engineering?', 'No.'], ['Who should skip it?', 'Anyone aiming at a job-ready portfolio in a few weeks. Come back after Stage 4.'], ['What next?', 'Move on to the LLM stage and start with the one-hour intro talk.']],
+    build: null, next: 'llm-intro' },
+  { slug: 'llm-intro', title: 'Intro to Large Language Models', provider: 'Andrej Karpathy · YouTube', url: 'https://www.youtube.com/watch?v=zjkBMFhNj_g', price: 'Free', stage: 2, verdict: 'start',
+    line: 'One hour that gives you the right mental model before you touch a framework.', time: '≈ 1 h', prereq: 'None.',
+    covers: ['What an LLM is and how it is trained', 'Why scale helps, and where models fail', 'The "LLM as an operating system" framing, plus security issues like prompt injection'],
+    not: ['Hands-on building', 'Retrieval and tool use in practice', 'Evaluation'],
+    review: [['Is this worth the time?', 'Yes. It is an hour, and it changes how you think about what you are building.'], ['Too theoretical?', 'Conceptual by design, and clear.'], ['Does it teach production engineering?', 'No, but the security section is a useful first look at what can go wrong.'], ['Who should skip it?', 'Anyone who can already explain pretraining, fine-tuning and prompt injection to a colleague.'], ['What next?', 'Read Anthropic\'s Building effective agents, then build the Document Q&A project.']],
+    build: 'doc-qa', next: 'effective-agents' },
+  { slug: 'effective-agents', title: 'Building effective agents', provider: 'Anthropic Engineering', url: 'https://www.anthropic.com/engineering/building-effective-agents', price: 'Free', stage: 2, verdict: 'start',
+    line: 'The clearest case for choosing a simple workflow before reaching for an agent.', time: '≈ 30 min', prereq: 'You have called an LLM API at least once.',
+    covers: ['Workflows versus agents, and when each is worth the cost', 'Common patterns: chaining, routing, parallelisation, orchestrator-workers, evaluator-optimiser', 'Tool design: why the interface matters as much as the prompt'],
+    not: ['Code you can paste', 'Evaluation and observability in depth', 'Deployment'],
+    review: [['Is this worth the time?', 'Absolutely. Thirty minutes, and it will stop you over-building your first agent.'], ['Too theoretical?', 'Conceptual but concrete. Each pattern maps to something you can build in an afternoon.'], ['Does it teach production engineering?', 'It touches on simplicity, transparency and testing, but it is not a production guide.'], ['Who should skip it?', 'Nobody. Read it before you pick a framework.'], ['What next?', 'Build the tool-calling agent with step limits, then tour frameworks with the Hugging Face course.']],
+    build: 'tool-agent', next: 'hf-agents' },
+  { slug: 'hf-agents', title: 'AI Agents Course', provider: 'Hugging Face', url: 'https://huggingface.co/learn/agents-course', price: 'Free', stage: 2, verdict: 'pair',
+    line: 'A useful tour of how different frameworks structure the same agent loop.', time: '≈ 10–20 h, depending on the units you do', prereq: 'Python and basic LLM API experience.',
+    covers: ['Agent fundamentals: thought, action, observation', 'Building agents with several popular frameworks', 'Tools, memory and multi-step tasks'],
+    not: ['Evaluating agent behaviour', 'Cost and latency control', 'Reliability in production'],
+    review: [['Is this worth the time?', 'Yes, as a map. The value is seeing the same loop expressed several ways, then understanding it well enough to write it yourself.'], ['Too theoretical?', 'The opposite. It is code-first, so the risk is following along without knowing what the framework hides.'], ['Does it teach production engineering?', 'No. Treat the examples as demos.'], ['Who should skip it?', 'Skip units for frameworks you will not use. If you can already write a tool-calling loop by hand, skim.'], ['What next?', 'Rebuild one of its examples without a framework, with step limits and logging.']],
+    build: 'tool-agent', next: 'fsdl' },
+  { slug: 'fsdl', title: 'LLM Bootcamp', provider: 'Full Stack Deep Learning', url: 'https://fullstackdeeplearning.com/llm-bootcamp', price: 'Free', stage: 2, verdict: 'skim',
+    line: 'Still good on product thinking and failure modes. The tooling snapshots are dated.', time: '≈ 8–10 h if you pick lectures', prereq: 'Some LLM API experience.',
+    covers: ['Prompting and augmented language models', 'LLMOps and UX for LLM products', 'A full walkthrough of an LLM app'],
+    not: ['Today\'s tooling and model landscape', 'Rigorous evaluation practice', 'Agents as they exist now'],
+    review: [['Is this worth 10 hours?', 'Skim it. The product, UX and LLMOps lectures hold up. The tool demos are from 2023, and the tool landscape has moved on.'], ['Too theoretical?', 'Mixed. It leans practical, but you mostly watch rather than build.'], ['Does it teach production engineering?', 'Partly. LLMOps and UX are the useful parts.'], ['Who should skip it?', 'Anyone short on time. Eugene Yan\'s patterns post covers similar ground in an hour.'], ['What next?', 'Move on to Stage 4 and read Your AI Product Needs Evals.']],
+    build: null, next: 'hamel-evals' },
+  { slug: 'hamel-evals', title: 'Your AI Product Needs Evals', provider: 'Hamel Husain', url: 'https://hamel.dev/blog/posts/evals/', price: 'Free', stage: 3, verdict: 'start',
+    line: 'The post that turns "testing an LLM app" into something you can actually do.', time: '≈ 45 min', prereq: 'You have built an LLM feature.',
+    covers: ['Why LLM products stall without evaluation', 'Levels of evals: assertions, human and model review, then A/B tests', 'Making it cheap to look at real data'],
+    not: ['A turnkey tool', 'Validating an LLM judge in depth', 'Production monitoring setup'],
+    review: [['Is this worth the time?', 'Yes. Read it before you build any eval infrastructure.'], ['Too theoretical?', 'No. It is practical and opinionated.'], ['Does it teach production engineering?', 'It teaches the habit production AI depends on: look at your data and test every change.'], ['Who should skip it?', 'Anyone who already runs evals in CI and reviews traces weekly.'], ['What next?', 'Add a 20-question eval to your Document Q&A, then wire it into CI in the Production RAG project.']],
+    build: 'prod-rag', next: 'applied-llms' },
+  { slug: 'applied-llms', title: 'What We\'ve Learned From A Year of Building with LLMs', provider: 'Yan, Bischof, Frye, Husain, Liu, Shankar', url: 'https://applied-llms.org/', price: 'Free', stage: 3, verdict: 'worth',
+    line: 'A dense checklist of tactical, operational and strategic lessons from people shipping.', time: '≈ 1–2 h', prereq: 'You have shipped, or are about to ship, an LLM feature.',
+    covers: ['Prompting, RAG, tool use and evaluation tactics', 'Operations: data, models, product and team', 'Strategy: what to build, buy and avoid'],
+    not: ['Step-by-step tutorials', 'Up-to-date model comparisons, since it dates from 2024'],
+    review: [['Is this worth the time?', 'Yes, as a checklist. Re-read it when you start a project and again before you ship.'], ['Too theoretical?', 'No. It is practitioner advice in bite-size pieces.'], ['Does it teach production engineering?', 'Yes, that is the point of it.'], ['Who should skip it?', 'Skip it for now if you have not built anything yet. It lands harder after you have felt the problems.'], ['What next?', 'Use it as the outline for your project write-ups in Stage 5.']],
+    build: 'prod-rag', next: 'eugene-patterns' },
+  { slug: 'ai-eng-book', title: 'AI Engineering', provider: 'Chip Huyen · O\'Reilly, 2025', url: 'https://bookshop.org/p/books/ai-engineering-building-applications-with-foundation-models-chip-huyen/d1a4892f5eb5134f', price: 'Book', stage: 3, verdict: 'worth',
+    line: 'The most complete single book on building applications with foundation models.', time: '≈ 15–25 h of reading', prereq: 'Some ML and software background.',
+    covers: ['Evaluation and the AI engineering stack', 'Prompting, RAG, agents, fine-tuning and dataset work', 'Inference optimisation, architecture and user feedback'],
+    not: ['Copy-paste code', 'A walkthrough of one framework or vendor', 'Hands-on projects with solutions'],
+    review: [['Is this worth buying?', 'Worth it if you plan to ship AI systems for a while. It gives you vocabulary and decision frameworks that outlast any specific tool.'], ['Too theoretical?', 'Conceptual and wide. It explains the why behind choices rather than showing code.'], ['Does it teach production engineering?', 'Yes. Evaluation, architecture and feedback loops get real space.'], ['Who should skip it?', 'Anyone who wants a tutorial, or only has a few weeks. Read the evaluation and RAG chapters, then build.'], ['What next?', 'Read the evaluation chapters before the Production RAG project.']],
+    build: 'prod-rag', next: 'eugene-patterns' },
+  { slug: 'eugene-patterns', title: 'Patterns for Building LLM-based Systems & Products', provider: 'Eugene Yan', url: 'https://eugeneyan.com/writing/llm-patterns/', price: 'Free', stage: 3, verdict: 'worth',
+    line: 'Seven patterns with tradeoffs: evals, RAG, fine-tuning, caching, guardrails, defensive UX and feedback.', time: '≈ 1 h', prereq: 'You have built an LLM feature.',
+    covers: ['Evals, retrieval and fine-tuning tradeoffs', 'Caching and guardrails', 'Defensive UX and collecting feedback'],
+    not: ['Code to copy', 'The latest tools'],
+    review: [['Is this worth the time?', 'Yes. Good for deciding what to build next and what can wait.'], ['Too theoretical?', 'No. Each pattern comes with when to use it and what it costs.'], ['Does it teach production engineering?', 'Yes, at the design level.'], ['Who should skip it?', 'Anyone who has read the Applied LLMs piece and already applies caching and guardrails.'], ['What next?', 'Apply caching and guardrails in the Production RAG project.']],
+    build: 'prod-rag', next: null },
+  { slug: 'dlai-agentic', title: 'Agentic AI', provider: 'Andrew Ng · DeepLearning.AI', url: 'https://www.deeplearning.ai/courses/agentic-ai', price: 'Free to audit', stage: 2, verdict: 'worth',
+    line: 'A clean tour of reflection, tool use, planning and multi-agent patterns, with an honest module on evals and error analysis.', time: '≈ 10 h', prereq: 'Intermediate Python and basic LLM API experience.',
+    covers: ['Agentic workflows and degrees of autonomy', 'Reflection, tool use and MCP', 'Evals, error analysis, and latency and cost optimisation', 'Planning and multi-agent patterns'],
+    not: ['Deploying and operating an agent', 'Tracing and monitoring in production', 'Framework-specific depth'],
+    review: [['Is this worth the time?', 'Yes, as a second pass after Anthropic\'s Building effective agents. If you only do one module, do the practical-tips one on evals and error analysis.'], ['What does it cost?', 'Auditing is free and gives you the videos and the forum. Quizzes, labs, projects and the certificate need a DeepLearning.AI Pro membership: $25 a month billed annually, or $30 a month.'], ['Too theoretical?', 'Mostly pattern-level. You learn the shapes, then have to build your own.'], ['Who should skip it?', 'Anyone who has already built a tool-calling loop with step limits and run evals on it.'], ['What next?', 'Build the tool-calling agent project, then move to Stage 4.']],
+    build: 'tool-agent', next: 'hamel-evals' },
+  { slug: 'beyondvectors', title: 'Building AI Agents for Enterprise', provider: 'Beyond Vectors · Abhijith Neerkaje and Ajay Shenoy', url: 'https://beyondvectors.com/', price: 'Paid · ₹50,000', stage: 2, verdict: 'optional',
+    line: 'A six-weekend live cohort that goes from agent basics through RAG, tools, evals and production.', time: '6 weekends, live', prereq: 'Python, and some LLM API experience helps.',
+    covers: ['Agents versus workflows, prompting and structured outputs', 'RAG: chunking, re-ranking and query rewriting', 'Tool schemas, memory and MCP', 'Evals, LLM-as-judge and error analysis', 'Inference optimisation, tracing, guardrails and multi-agent systems'],
+    not: ['A job guarantee', 'Anything free: the price covers live sessions and the community'],
+    review: [['Is this worth the money?', 'This is a syllabus review. I have not taken the course. The syllabus is sound: evals, tracing and guardrails each get real time, which most paid courses skip.'], ['What does it cost?', 'The page lists ₹50,000 for the six-week cohort, with recordings kept for life. The October 2026 cohort has already started, so check the site for the next one.'], ['Too theoretical?', 'The outline is project-oriented: a case study and a Docker deployment in the last week.'], ['Who should skip it?', 'Anyone who can self-direct with the free resources. You pay for pacing, feedback and a community.'], ['What next?', 'Build the Production RAG project on top of whatever you make in the course.']],
+    build: 'prod-rag', next: 'hamel-evals' },
+  { slug: 'evals-maven', title: 'AI Evals For Engineers & PMs', provider: 'Hamel Husain and Shreya Shankar · Maven', url: 'https://maven.com/parlance-labs/evals', price: 'Paid · $4,400', stage: 3, verdict: 'optional',
+    line: 'The most direct paid course on evals: error analysis, LLM judges, CI regression tests and red-teaming.', time: '33 live sessions · 3–5 h a week, plus homework', prereq: 'You have built an LLM feature.',
+    covers: ['Tracing and observability for an agent', 'Error analysis to find and rank failures', 'LLM-as-judge and code-based evaluators', 'Regression tests in CI and production monitoring', 'Red-teaming for prompt injection and unsafe tool calls'],
+    not: ['A tour of frameworks', 'Model training or fine-tuning', 'A cheap option'],
+    review: [['Is this worth $4,400?', 'This is a syllabus review. I have not taken the course. If evals are your job, or your employer pays, it is a fast route to the habit. If you are paying yourself, read Hamel\'s free posts first.'], ['What is free?', 'The page lists the first two lectures as previews, a free FAQ, flashcards and a recorded lesson. Start there.'], ['What do you get?', 'Lifetime access to recordings and future cohorts, a 200+ page course reader, office hours and a certificate.'], ['When is the next cohort?', 'The page says the 2026 cohort is the last one of the year. The next listed runs 30 January to 27 March 2027.'], ['What next?', 'Wire an eval into CI in the Production RAG project.']],
+    build: 'prod-rag', next: 'eugene-patterns' },
+  { slug: 'aiengg-cohort', title: 'AI Engineering Cohort', provider: 'Gaurav Sen and Tanishq Singh', url: 'https://aiengg.dev/', price: 'Paid · $2,200', stage: 3, verdict: 'optional',
+    line: 'Six weeks of agentic design, retrieval, evals and security, deployment, observability and a production capstone.', time: '6 weeks · 6–8 h a week', prereq: 'Software engineering experience.',
+    covers: ['Agentic system design and memory', 'Search and retrieval patterns, guardrails', 'Evals and agent security', 'Deployment and CI/CD', 'Tracing, monitoring, caching and rate limits', 'A production capstone'],
+    not: ['ML fundamentals', 'A free option'],
+    review: [['Is this worth the money?', 'This is a syllabus review. I have not taken the course. The structure is close to this roadmap\'s Stages 3 and 4, and it ends in a capstone you can show.'], ['What does it cost?', 'The page lists $2,200 (listed at $2,500), a 7-day money-back guarantee with 5–10% payment charges non-refundable, and a reimbursement guide for employers. It starts 7 November 2026.'], ['Too theoretical?', 'It is system-design heavy, with a coding task each week.'], ['Who should skip it?', 'Anyone who prefers to work at their own pace. Public capstones from past cohorts are on the page, which is a free way to see the standard.'], ['What next?', 'Polish one capstone and write it up in Stage 5.']],
+    build: 'prod-rag', next: 'eugene-patterns' },
+  { slug: 'mlops-zoomcamp', title: 'MLOps Zoomcamp', provider: 'DataTalksClub', url: 'https://github.com/DataTalksClub/mlops-zoomcamp', price: 'Free', stage: 3, verdict: 'optional',
+    line: 'Classic MLOps: experiment tracking, pipelines, deployment and monitoring. Not LLM-specific, but the habits transfer.', time: '≈ 9 weeks', prereq: 'Python, Docker and basic ML.',
+    covers: ['Experiment tracking and model registry', 'Pipelines and deployment', 'Monitoring and CI/CD'],
+    not: ['RAG, agents or LLM evaluation'],
+    review: [['Is this worth the time?', 'Only if you have never operated a model. If you have shipped ML services, skip it.'], ['Too theoretical?', 'It is hands-on.'], ['Does it teach production engineering?', 'Yes, for classic ML. You will adapt the ideas to prompts and traces yourself.'], ['Who should skip it?', 'Anyone with production ML experience.'], ['What next?', 'Apply the same discipline to the Production RAG project.']],
+    build: 'prod-rag', next: 'eugene-patterns' },
+  { slug: 'bootcamps', title: 'All-in-one "AI engineer" bootcamps', provider: 'Various', url: '', price: 'Paid', stage: 4, verdict: 'skip',
+    line: 'Breadth without evals, production work or taste. Spend the money on API credits and a deployment.', time: '30–100+ h', prereq: 'Varies.',
+    covers: ['A tour of many tools and demos'], not: ['Evaluation habits', 'Operating anything in production', 'Your own judgement calls'],
+    review: [['Is this worth the money?', 'Rarely. The test: does it make you build, evaluate and deploy something of your own?'], ['Too theoretical?', 'Varies. Many are demo-driven.'], ['Does it teach production engineering?', 'Seldom.'], ['Who should skip it?', 'Skip any that end in a certificate instead of a deployed project. Some are good: check the syllabus for evals and deployment before paying.'], ['What next?', 'Put the money into the Stage 4 builds instead.']],
+    build: 'prod-rag', next: null }
+];
+const RES_BY = {}; RESOURCES.forEach((r) => { RES_BY[r.slug] = r; r.core = ['start', 'worth', 'pair', 'skim'].indexOf(r.verdict) >= 0; });
+const PROJECTS = [
+  { slug: 'doc-qa', title: 'Document Q&A with citations', stage: 2, hours: '12–16 h', done: 'Answers cite the exact source passage, and a 20-question eval proves it.', focus: ['rag', 'evals'],
+    what: 'A service that answers questions over documents you choose, quotes the passages it used, and says "I don\'t know" when it has nothing relevant.',
+    criteria: ['Every answer includes citations that link to source passages', 'A small eval set (20+ questions) with a pass/fail score you can re-run', 'Says "I don\'t know" when retrieval finds nothing relevant', 'Deployed with a public URL', 'README explaining your chunking and retrieval tradeoffs'],
+    stack: ['Python and FastAPI', 'An embedding model and a vector index you can run locally (pgvector, Chroma or FAISS)', 'Any LLM API', 'A simple web page or Streamlit UI'],
+    mistakes: ['Evaluating by eyeballing three answers', 'Chunking by fixed length without looking at what gets retrieved', 'Letting the model answer when retrieval returned junk'] },
+  { slug: 'tool-agent', title: 'Tool-calling agent with step limits', stage: 2, hours: '10–14 h', done: 'It finishes tasks within a step and cost budget, and fails safely when it cannot.', focus: ['agents'],
+    what: 'An agent with three or four real tools (search, a calculator, a database query, a file read) and a hard cap on steps and spend.',
+    criteria: ['Hard limits on steps and tokens, enforced in code', 'Every tool call and result is logged and replayable', 'Handles tool errors and malformed arguments without looping', 'Refuses tasks outside its scope', 'A 10-task eval set with success rate and average steps', 'README explaining why an agent beats a fixed workflow here'],
+    stack: ['Python', 'Any LLM API with tool calling', 'Structured logs or a small tracing setup'],
+    mistakes: ['No stop condition, so a confused agent loops until the budget is gone', 'Ten tools when three would do', 'Hiding tool errors from the model'] },
+  { slug: 'prod-rag', title: 'Production RAG with observability', stage: 3, hours: '16–20 h', done: 'You change the prompt and the CI eval tells you whether you broke something.', focus: ['rag', 'evals', 'deploy'],
+    what: 'Take your Document Q&A project and make it operable: traces, cost and latency tracking, caching, and an eval that runs on every change.',
+    criteria: ['Every request produces a trace you can inspect', 'Cost and latency per request are recorded and visible', 'An eval runs in CI and fails the build on regression', 'Prompts are versioned in the repo', 'A cache or fallback path for the slowest step', 'README with a short "what broke and how I found out" section'],
+    stack: ['Your Document Q&A project', 'An open tracing tool or structured logs', 'GitHub Actions or similar for the eval run'],
+    mistakes: ['Building a dashboard before the eval exists', 'An LLM judge nobody has checked against human labels', 'Logging prompts without redacting sensitive data'] },
+  { slug: 'extraction', title: 'Structured extraction service', stage: 3, hours: '10–12 h', done: 'Field-level accuracy is measured, and bad outputs are repaired or rejected.', focus: ['deploy', 'evals'],
+    what: 'An API that turns messy text (invoices, emails, job posts) into validated JSON, with retries, repair and a way to abstain.',
+    criteria: ['Output validated against a schema; invalid output is retried or rejected', 'Field-level accuracy measured on a labelled set of 30+ documents', 'Can abstain with a reason instead of guessing', 'A batch endpoint with sensible timeouts and retries', 'Deployed with a public URL', 'README on which fields are hard, and why'],
+    stack: ['Python, FastAPI and Pydantic', 'Any LLM API with structured outputs', 'A labelled sample you create yourself'],
+    mistakes: ['Measuring "valid JSON" instead of correct fields', 'Never testing on messy inputs', 'Treating confidence as a vibe instead of a threshold you tuned'] }
+];
+const PROJ_BY = {}; PROJECTS.forEach((p) => { PROJ_BY[p.slug] = p; });
+const FILTERS = [['all', 'All'], [0, 'Foundations'], [1, 'ML / Deep Learning'], [2, 'LLM engineering'], [3, 'Production AI'], [4, 'Portfolio']];
+const FEATURED = ['effective-agents', 'dlai-agentic', 'hamel-evals', 'evals-maven'];
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: 'home', param: null, step: 0, answers: {}, assessment: null,
+      progress: { resources: {}, projects: {}, criteria: {}, checks: {}, notes: '', startedAt: null },
+      filter: 'all', open: {}, settingsOpen: false, toast: '', justDone: null,
+      settings: { motion: 'full', theme: 'light', font: 'default', simple: 'off' }, webgl: 'unknown'
+    };
+    this._scenes = {};
+    this._stops = [];
+  }
+
+  /* ---------- lifecycle ---------- */
+  componentDidMount() {
+    const saved = readJSON(KEYS.s, null);
+    const settings = Object.assign({ motion: mm('(prefers-reduced-motion: reduce)') ? 'calm' : 'full', theme: mm('(prefers-color-scheme: dark)') ? 'dark' : 'light', font: 'default', simple: 'off' }, saved || {});
+    const assessment = readJSON(KEYS.a, null);
+    const progress = Object.assign({ resources: {}, projects: {}, criteria: {}, checks: {}, notes: '', startedAt: null }, readJSON(KEYS.p, {}));
+    const st = { settings, assessment, progress };
+    const route = fromHash();
+    if (route) {
+      st.view = route.view; st.param = route.param;
+      if (route.view === 'result' && !assessment) st.view = 'assess';
+      if (st.view === 'assess' && assessment) st.answers = Object.assign({}, assessment);
+    }
+    this.setState(st);
+    this._pop = (e) => {
+      const s = e && e.state;
+      if (s && s.view) this.setState({ view: s.view, param: s.param || null, step: s.view === 'assess' ? (s.step || 0) : this.state.step, settingsOpen: false });
+      else { const r = fromHash(); this.setState({ view: r ? r.view : 'home', param: r ? r.param : null, settingsOpen: false }); }
+      this.scrollTop();
+    };
+    window.addEventListener('popstate', this._pop);
+    const root = document.getElementById('aios');
+    this._pd = (e) => {
+      const M = window.Motion; if (!M || this.isCalm()) return;
+      const el = e.target && e.target.closest ? e.target.closest('.pressable') : null;
+      if (!el || el.disabled) return;
+      this._pressed = el; M.animate(el, { scale: 0.97 }, { duration: 0.12, ease: 'easeOut' });
+    };
+    this._pu = () => {
+      const M = window.Motion, el = this._pressed; if (!M || !el) return; this._pressed = null;
+      M.animate(el, { scale: 1 }, { type: 'spring', stiffness: 520, damping: 22 });
+    };
+    if (root) root.addEventListener('pointerdown', this._pd, { passive: true });
+    document.addEventListener('pointerup', this._pu); document.addEventListener('pointercancel', this._pu);
+  }
+  componentDidUpdate() { this.syncEffects(); }
+  componentWillUnmount() {
+    window.removeEventListener('popstate', this._pop);
+    document.removeEventListener('pointerup', this._pu); document.removeEventListener('pointercancel', this._pu);
+    const root = document.getElementById('aios'); if (root) root.removeEventListener('pointerdown', this._pd);
+    Object.keys(this._scenes).forEach((k) => { try { this._scenes[k].ctrl.destroy(); } catch (e) { /* noop */ } });
+    this._scenes = {}; this.stopFx(); clearTimeout(this._tt); clearTimeout(this._t3);
+  }
+
+  /* ---------- helpers ---------- */
+  isCalm() { return this.state.settings.motion === 'calm'; }
+  scrollTop() { try { window.scrollTo(0, 0); const se = document.scrollingElement; if (se) se.scrollTop = 0; } catch (e) { /* noop */ } }
+  go(view, param, extra) {
+    const st = Object.assign({ view, param: param || null, settingsOpen: false }, extra || {});
+    this.setState(st);
+    try { history.pushState({ view, param: param || null, step: st.step || 0 }, '', toHash(view, param)); } catch (e) { try { history.pushState({ view, param: param || null }, ''); } catch (e2) { /* noop */ } }
+    this.scrollTop();
+  }
+  toast(msg) { this.setState({ toast: msg }); clearTimeout(this._tt); this._tt = setTimeout(() => this.setState({ toast: '' }), 2200); }
+  setSetting(k, v) { const settings = Object.assign({}, this.state.settings, { [k]: v }); this.setState({ settings }); writeJSON(KEYS.s, settings); }
+  saveProgress(p) { if (!p.startedAt) p.startedAt = Date.now(); this.setState({ progress: p }); writeJSON(KEYS.p, p); }
+  startAssessment() { this.go('assess', null, { step: 0, answers: Object.assign({}, this.state.assessment || {}) }); }
+
+  /* ---------- effects: 3D, enter animation, anime ---------- */
+  sync3D(id, want, lit) {
+    const canvas = document.getElementById(id), cur = this._scenes[id];
+    if (cur && (!canvas || cur.canvas !== canvas || !want)) { try { cur.ctrl.destroy(); } catch (e) { /* noop */ } delete this._scenes[id]; }
+    if (!want || !canvas) return;
+    if (!this._scenes[id]) {
+      if (!window.AIOS3D) { this._r3 = (this._r3 || 0) + 1; if (this._r3 < 40) { clearTimeout(this._t3); this._t3 = setTimeout(() => this.syncEffects(), 250); } return; }
+      const ctrl = window.AIOS3D.mount(canvas, { lit, motion: !this.isCalm(), theme: this.state.settings.theme });
+      if (ctrl) { this._scenes[id] = { ctrl, canvas }; if (this.state.webgl !== 'ok') this.setState({ webgl: 'ok' }); }
+      else if (this.state.webgl !== 'fail') this.setState({ webgl: 'fail' });
+    }
+    const sc = this._scenes[id];
+    if (sc) { sc.ctrl.setLit(lit); sc.ctrl.setMotion(!this.isCalm()); sc.ctrl.setTheme(this.state.settings.theme); }
+  }
+  stopFx() { (this._stops || []).forEach((f) => { try { f(); } catch (e) { /* noop */ } }); this._stops = []; if (this._scrollOff) { try { this._scrollOff(); } catch (e) { /* noop */ } this._scrollOff = null; } }
+  syncEffects() {
+    const s = this.state, simple = s.settings.simple === 'on';
+    this.sync3D('aios-path3d', s.view === 'home' && !simple && !!window.matchMedia && window.matchMedia('(min-width:1000px)').matches, this.isCalm() ? 5 : (this._pathLit || 0));
+    this.sync3D('aios-progress3d', s.view === 'progress' && !simple, this.litCount ? this.litCount() : 0);
+    this.fillCounts();
+    const key = s.view + '|' + (s.param || '') + '|' + (s.view === 'assess' ? s.step : '');
+    if (key !== this._enterKey) { this._enterKey = key; this.runEnter(); try { const m = document.getElementById('aios-main'); if (m && this._entered) m.focus({ preventScroll: true }); } catch (e) { /* noop */ } this._entered = true; }
+    if (s.settingsOpen && !this._sheetWas) { try { const c = document.getElementById('aios-sheet-close'); if (c) c.focus(); } catch (e) { /* noop */ } }
+    if (!s.settingsOpen && this._sheetWas && this._opener) { try { this._opener.focus(); } catch (e) { /* noop */ } this._opener = null; }
+    this._sheetWas = s.settingsOpen;
+  }
+  fillCounts() {
+    document.querySelectorAll('[data-count]').forEach((el) => {
+      if (el.__anim) return;
+      const v = String(el.getAttribute('data-count') || '0');
+      if (el.textContent !== v) el.textContent = v;
+    });
+  }
+  runEnter() {
+    const M = window.Motion, A = window.AnimeJS, calm = this.isCalm();
+    this.stopFx();
+    const view = document.getElementById('aios-view'); if (!view) return;
+    if (M && !calm) {
+      M.animate(view, { opacity: [0, 1] }, { duration: 0.35, ease: 'easeOut' });
+      const els = Array.prototype.slice.call(view.querySelectorAll('.reveal'));
+      els.forEach((el) => { el.style.opacity = '0'; });
+      els.forEach((el, i) => {
+        this._stops.push(M.inView(el, () => { M.animate(el, { opacity: [0, 1], y: [18, 0] }, { duration: 0.6, delay: (i % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }); }, { margin: '0px 0px -6% 0px' }));
+      });
+    }
+    if (M && !calm) this.runHome(view, M);
+    if (A && M && !calm) this.runAnime(view, A, M);
+    else this.runAnimeStatic(view);
+  }
+  runHome(view, M) {
+    const push = (f) => { if (typeof f === 'function') this._stops.push(f); };
+    try {
+      const words = Array.prototype.slice.call(view.querySelectorAll('.hw > span'));
+      if (words.length) {
+        words.forEach((w) => { w.style.transform = 'translateY(112%)'; });
+        M.animate(words, { transform: ['translateY(112%)', 'translateY(0%)'] }, { duration: 0.95, delay: M.stagger(0.07, { startDelay: 0.1 }), ease: [0.22, 1, 0.36, 1] });
+        setTimeout(() => { words.forEach((w) => { w.style.transform = ''; }); }, 2200);
+      }
+      const sp = view.querySelector('.sp');
+      if (sp) { sp.style.display = 'block'; push(M.scroll(M.animate(sp, { scaleX: [0, 1] }, { ease: 'linear' }))); }
+      const mq = view.querySelector('.marq');
+      if (mq) {
+        const pills = Array.prototype.slice.call(mq.querySelectorAll('.mq:not([aria-hidden])'));
+        pills.forEach((el) => { el.style.opacity = '0'; });
+        push(M.inView(mq, () => { M.animate(pills, { opacity: [0, 1], y: [14, 0] }, { duration: 0.5, delay: M.stagger(0.04), ease: [0.22, 1, 0.36, 1] }); }, { margin: '0px 0px -8% 0px' }));
+      }
+      const seq = view.querySelector('.seq');
+      if (seq) {
+        seq.setAttribute('data-on', '1');
+        const ls = Array.prototype.slice.call(seq.querySelectorAll('.seq-l')), dts = Array.prototype.slice.call(seq.querySelectorAll('.seq-dots i')), N = ls.length;
+        const apply = (p) => {
+          const q = clamp(p, 0, 0.9999);
+          for (let i = 0; i < N; i++) {
+            let d = q * N - (i + 0.5);
+            let o = clamp(1 - (Math.abs(d) - 0.2) / 0.3, 0, 1);
+            if ((i === 0 && d < 0) || (i === N - 1 && d > 0)) o = 1;
+            const y = clamp(-d, -1, 1) * 44;
+            ls[i].style.opacity = String(o);
+            ls[i].style.transform = 'translateY(calc(-50% + ' + y.toFixed(1) + 'px))';
+            ls[i].style.visibility = o < 0.01 ? 'hidden' : 'visible';
+            if (dts[i]) dts[i].className = Math.floor(q * N) === i ? 'on' : '';
+          }
+        };
+        apply(0);
+        push(M.scroll(apply, { target: seq, offset: ['start start', 'end end'] }));
+        push(() => { seq.removeAttribute('data-on'); });
+      }
+      const sks = Array.prototype.slice.call(view.querySelectorAll('.sk'));
+      sks.forEach((c, i) => { if (i < sks.length - 1) push(M.scroll(M.animate(c, { scale: [1, 0.94] }, { ease: 'linear' }), { target: sks[i + 1], offset: ['start end', 'start 25%'] })); });
+      this._pathLit = 0;
+      const arrived = sks.map(() => false);
+      sks.forEach((c, i) => {
+        push(M.scroll((p) => {
+          arrived[i] = p >= 0.98;
+          let n = 0; for (let k = 0; k < arrived.length; k++) { if (arrived[k]) n = k + 1; else break; }
+          if (n !== this._pathLit) { this._pathLit = n; const sc = this._scenes['aios-path3d']; if (sc) sc.ctrl.setLit(n); }
+        }, { target: c, offset: ['start end', 'start 45%'] }));
+      });
+      Array.prototype.slice.call(view.querySelectorAll('.skl-i')).forEach((li) => {
+        li.style.setProperty('--s', '0');
+        push(M.scroll((p) => { li.style.setProperty('--s', String(p)); }, { target: li, offset: ['start 92%', 'start 62%'] }));
+      });
+      const wall = view.querySelector('.wall'), rows = wall ? wall.querySelectorAll('.wall-row') : [];
+      if (rows.length === 2) {
+        push(M.scroll(M.animate(rows[0], { x: [0, -140] }, { ease: 'linear' }), { target: wall, offset: ['start end', 'end start'] }));
+        push(M.scroll(M.animate(rows[1], { x: [-140, 0] }, { ease: 'linear' }), { target: wall, offset: ['start end', 'end start'] }));
+      }
+    } catch (e) { /* noop */ }
+  }
+  runAnimeStatic(view) { view.querySelectorAll('[data-count]').forEach((el) => { el.textContent = String(el.getAttribute('data-count') || '0'); }); }
+  runAnime(view, A, M) {
+    view.querySelectorAll('[data-count]').forEach((el) => {
+      const to = parseFloat(el.getAttribute('data-count')) || 0, o = { v: 0 }; el.__anim = true; el.textContent = '0';
+      A.animate(o, { v: to, duration: 1200, delay: 150, ease: 'outExpo', onUpdate: () => { el.textContent = String(Math.round(o.v)); }, onComplete: () => { el.__anim = false; el.textContent = String(to); } });
+    });
+    view.querySelectorAll('[data-cv]').forEach((el) => {
+      const to = parseFloat(el.getAttribute('data-cv')) || 0, o = { v: 0 }; el.textContent = '0';
+      this._stops.push(M.inView(el, () => { A.animate(o, { v: to, duration: 1400, ease: 'outExpo', onUpdate: () => { el.textContent = String(to % 1 ? Math.round(o.v * 10) / 10 : Math.round(o.v)); }, onComplete: () => { el.textContent = String(to); } }); }, { margin: '0px 0px -10% 0px' }));
+    });
+    view.querySelectorAll('[data-ring]').forEach((el) => {
+      const fin = parseFloat(el.getAttribute('stroke-dashoffset')) || 0, C = parseFloat(el.getAttribute('stroke-dasharray')) || 326.7;
+      A.animate(el, { strokeDashoffset: [C, fin], duration: 1400, delay: 150, ease: 'outExpo', onComplete: () => { el.style.removeProperty('stroke-dashoffset'); } });
+    });
+    view.querySelectorAll('[data-pop]').forEach((el) => {
+      el.style.opacity = '0';
+      this._stops.push(M.inView(el, () => { A.animate(el, { scale: [0.5, 1], opacity: [0, 1], duration: 700, ease: 'outBack' }); }));
+    });
+    view.querySelectorAll('[data-draw]').forEach((el) => {
+      try {
+        const dr = A.svg.createDrawable(el); A.utils.set(dr, { draw: '0 0' });
+        this._stops.push(M.inView(el.ownerSVGElement || el, () => { A.animate(dr, { draw: ['0 0', '0 1'], duration: 1200, ease: 'inOutQuad' }); }));
+      } catch (e) { /* noop */ }
+    });
+    const fill = document.getElementById('aios-tl-fill'), tl = document.getElementById('aios-tl');
+    if (fill && tl) { try { this._scrollOff = M.scroll(M.animate(fill, { scaleY: [0, 1] }, { ease: 'linear' }), { target: tl, offset: ['start 75%', 'end 60%'] }); } catch (e) { /* noop */ } }
+  }
+  burst() {
+    const A = window.AnimeJS; if (!A || this.isCalm()) return;
+    const dots = document.querySelectorAll('.fx-dot');
+    A.animate(dots, { translateY: () => -(120 + Math.random() * 220), translateX: () => (Math.random() - 0.5) * 320, opacity: [{ to: 1, duration: 120 }, { to: 0, duration: 900 }], scale: [0.6, 1.2], duration: 1100, delay: A.stagger(40), ease: 'outQuad' });
+  }
+
+  /* ---------- render values ---------- */
+  renderVals() {
+    return Object.assign({}, this.vShell(), this.vHome(), this.vAssess(), this.vRoadmap(), this.vLearn(), this.vTopic(), this.vBuild(), this.vProject(), this.vProgress());
+  }
+
+  vShell() {
+    const s = this.state, st = s.settings, v = s.view;
+    const group = { roadmap: 'roadmap', result: 'roadmap', learn: 'learn', topic: 'learn', build: 'build', project: 'build', progress: 'progress', about: 'about' }[v] || '';
+    const items = [['roadmap', 'Roadmap', '#i-map'], ['learn', 'Learn', '#i-book'], ['build', 'Build', '#i-hammer'], ['progress', 'Progress', '#i-chart']];
+    const goTo = (id) => () => this.go(id === 'roadmap' ? 'roadmap' : id);
+    const seg = (key, opts) => opts.map((o) => ({ label: o[1], pressed: st[key] === o[0], pick: () => this.setSetting(key, o[0]) }));
+    const p = s.progress;
+    return {
+      theme: st.theme, font: st.font, simple: st.simple, motionMode: st.motion, view: v,
+      igUrl: IG_URL, webglFailed: s.webgl === 'fail',
+      isHome: v === 'home', isAssess: v === 'assess', isResult: v === 'result',
+      nav: items.concat([['about', 'About', '#i-user']]).map((x) => ({ label: x[1], cls: group === x[0] ? 'navbtn on' : 'navbtn', current: group === x[0] ? 'page' : 'false', go: goTo(x[0]) })),
+      tabs: items.map((x) => ({ label: x[1], icon: x[2], cls: group === x[0] ? 'tab on' : 'tab', current: group === x[0] ? 'page' : 'false', go: goTo(x[0]) })),
+      showTabbar: v !== 'home' && v !== 'assess' && v !== 'result',
+      showDock: v === 'home',
+      goHome: () => this.go('home'), goAbout: () => this.go('about'), goLearn: () => this.go('learn'), goProgress: () => this.go('progress'),
+      hasProgress: Object.keys(p.resources).length + Object.keys(p.projects).length + Object.keys(p.checks).length > 0,
+      openSettings: () => { this._opener = document.activeElement; this.setState({ settingsOpen: true }); },
+      closeSettings: () => this.setState({ settingsOpen: false }),
+      sheetKey: (e) => { if (e && e.key === 'Escape') this.setState({ settingsOpen: false }); },
+      settingsOpen: s.settingsOpen,
+      segMotion: seg('motion', [['full', 'Full'], ['calm', 'Calm']]),
+      segTheme: seg('theme', [['light', 'Light'], ['dark', 'Dark'], ['calm', 'Low-stim']]),
+      segFont: seg('font', [['default', 'Default'], ['readable', 'Readable']]),
+      segSimple: seg('simple', [['off', 'Show'], ['on', 'Simple']]),
+      hasToast: !!s.toast, toast: s.toast
+    };
+  }
+
+  vHome() {
+    return {
+      startAssess: () => this.startAssessment(),
+      scrollSample: () => { try { const el = document.getElementById('aios-sample'); if (el) el.scrollIntoView({ behavior: this.isCalm() ? 'auto' : 'smooth', block: 'start' }); } catch (e) { /* noop */ } },
+      scrollNext: () => { try { const el = document.querySelector('.seq'); if (el) el.scrollIntoView({ behavior: this.isCalm() ? 'auto' : 'smooth', block: 'start' }); } catch (e) { /* noop */ } },
+      legend: STAGES.map((x, i) => ({ label: x.short, dot: 'ldot ' + TONES[[1, 2, 0, 3, 4][i]] })),
+      gets: [
+        { chip: 'ic deco t-lav', icon: '#i-route', title: 'A roadmap sized to you', text: 'Five stages, with hours and weeks scaled to your background, ML experience and the time you really have.' },
+        { chip: 'ic deco t-mint', icon: '#i-book', title: 'Verdicts, not link lists', text: 'Every resource is marked worth your time, skim it, or skip it, with the reasoning shown.' },
+        { chip: 'ic deco t-peach', icon: '#i-hammer', title: 'What to build, and when you are done', text: 'Four portfolio projects, each with acceptance criteria you can check yourself.' },
+        { chip: 'ic deco t-pink', icon: '#i-scissors', title: 'What to skip', text: 'The courses, frameworks and rabbit holes that cost weeks and teach little.' }
+      ],
+      steps: [
+        { n: '1', title: 'Answer a few questions', text: 'Five taps, about two minutes. Nothing leaves your device.' },
+        { n: '2', title: 'Get your roadmap', text: 'Stages trimmed to what you already know, in the order that makes sense.' },
+        { n: '3', title: 'Learn, build, track', text: 'Read the reviews, ship the projects, tick things off as you go.' }
+      ],
+      preview: STAGES.map((x, i) => ({ skCls: 'sk sk-' + ['mint', 'peach', 'lav', 'pink', 'blue'][i], num: String(i + 1), hours: '≈ ' + x.hours + ' h', label: 'Stage ' + (i + 1), title: x.title, blurb: x.blurb, build: x.build })),
+      wallA: RESOURCES.slice(0, 6).map(wallCard), wallB: RESOURCES.slice(6, 12).map(wallCard)
+    };
+  }
+
+  vAssess() {
+    const s = this.state, step = clamp(s.step, 0, 4), qd = QUESTIONS[step], cur = s.answers[qd.id];
+    const q = {
+      title: qd.title, hint: qd.hint, optional: qd.optional,
+      options: qd.options.map((o, i) => ({
+        label: o.label, sub: o.sub, icon: o.icon, chip: 'ic deco ' + TONES[i % 5], cls: cur === o.v ? 'opt sel' : 'opt', checked: cur === o.v,
+        pick: () => this.setState({ answers: Object.assign({}, s.answers, { [qd.id]: o.v }) })
+      }))
+    };
+    const last = step === 4;
+    const next = () => {
+      if (!this.state.answers[qd.id] && !qd.optional) return;
+      if (!last) { this.setState({ step: step + 1 }); this.scrollTop(); return; }
+      this.finishAssessment();
+    };
+    return {
+      q, stepNum: step + 1, stepLabel: 'Step ' + (step + 1) + ' of 5',
+      dots: [0, 1, 2, 3, 4].map((i) => ({ cls: i === step ? 'dot now' : i < step ? 'dot on' : 'dot' })),
+      nextDisabled: !cur && !qd.optional, nextLabel: last ? 'Generate my roadmap' : 'Next',
+      assessNext: next,
+      assessSkip: () => { if (!last) { this.setState({ step: step + 1 }); this.scrollTop(); } else this.finishAssessment(); },
+      assessBack: () => { if (step === 0) this.go('home'); else { this.setState({ step: step - 1 }); this.scrollTop(); } },
+      plan: this.planVals(),
+      goRoadmap: () => this.go('roadmap')
+    };
+  }
+  resStatus(slug) { const x = this.state.progress.resources[slug]; return x === 'done' ? 'Done' : x === 'learning' ? 'In progress' : ''; }
+  setRes(slug, status) {
+    const p = Object.assign({}, this.state.progress), r = Object.assign({}, p.resources);
+    if (r[slug] === status) delete r[slug]; else r[slug] = status;
+    p.resources = r; this.saveProgress(p);
+    this.toast(r[slug] === 'done' ? 'Marked as done' : r[slug] === 'learning' ? 'Marked in progress' : 'Status cleared');
+  }
+  resCard(r) {
+    const vd = VERDICTS[r.verdict], st = this.resStatus(r.slug);
+    const fv = favOf(r.url || '', r.title);
+    return { icon: fv.icon, letter: fv.letter, iconErr: hideImg, title: r.title, provider: r.provider, price: r.price, line: r.line, time: r.time, verdictLabel: vd.label, verdictCls: 'pill ' + vd.cls, verdictIcon: vd.icon, status: st, hasStatus: !!st, open: () => this.go('topic', r.slug) };
+  }
+  vRoadmap() {
+    const s = this.state, v = s.view, has = !!s.assessment, plan = makePlan(s.assessment);
+    const firstActive = plan.stages.findIndex((x) => x.mode !== 'skip');
+    const stages = plan.stages.map((ps) => {
+      const st = STAGES[ps.i], skip = ps.mode === 'skip';
+      const open = s.open[st.id] === undefined ? ps.i === firstActive : s.open[st.id];
+      const free = RES_BY[st.free], paid = st.paid ? RES_BY[st.paid] : null, note = MODE_NOTES[ps.i][ps.mode] || '';
+      const tone = TONES[[1, 2, 0, 3, 4][ps.i]];
+      return {
+        n: ps.i + 1, dotCls: 'tl-dot ' + tone, cardCls: 'card stage-card' + (open ? ' open' : ''), chip: 'ic deco ' + tone, icon: st.icon,
+        stageLabel: 'Stage ' + (ps.i + 1), modeLabel: ps.mode === 'full' ? 'Full stage' : ps.mode === 'skim' ? 'Skim' : 'Skip for you',
+        modeCls: 'pill ' + (ps.mode === 'full' ? 'p-lav' : ps.mode === 'skim' ? 'p-peach' : 'p-gray'),
+        focus: plan.focusStage === ps.i, title: st.title, sub: ps.weeksLabel + ' · ' + ps.hoursLabel,
+        expanded: open ? 'true' : 'false', foldCls: 'fold' + (open ? ' open' : ''),
+        toggle: () => this.setState({ open: Object.assign({}, this.state.open, { [st.id]: !open }) }),
+        blurb: st.blurb, hasNote: !!note, note,
+        know: st.know.map((t) => ({ t })), freeTitle: free.title, freeMeta: free.provider + ' · ' + free.time, freeGo: () => this.go('topic', free.slug),
+        hasPaid: !!paid, paidTitle: paid ? paid.title : '', paidMeta: paid ? VERDICTS[paid.verdict].label + ' · ' + paid.price : '', paidGo: () => paid && this.go('topic', paid.slug),
+        hasPaidNote: !paid, paidNote: st.paidNote,
+        build: st.build, hasBuildLink: !!st.buildSlug, buildGo: () => st.buildSlug && this.go('project', st.buildSlug),
+        alts: st.alts.map(altVal), hasAlts: st.alts.length > 0, paidOpts: st.paidOpts.map(altVal), hasPaidOpts: st.paidOpts.length > 0,
+        competent: st.competent, mistakes: st.mistakes.map((t) => ({ t }))
+      };
+    });
+    const seen = {}, skills = [];
+    plan.stages.slice().sort((a, b) => (b.i === plan.focusStage ? 1 : 0) - (a.i === plan.focusStage ? 1 : 0)).forEach((ps) => { if (ps.mode !== 'skip') STAGES[ps.i].skills.forEach((k) => { if (!seen[k]) { seen[k] = 1; skills.push({ t: k }); } }); });
+    const fk = s.assessment ? s.assessment.focus : 'balanced';
+    const projs = PROJECTS.slice().sort((a, b) => (b.focus.indexOf(fk) >= 0 ? 1 : 0) - (a.focus.indexOf(fk) >= 0 ? 1 : 0)).map((p) => ({ t: p.title }));
+    return {
+      isRoadmap: v === 'roadmap', stages, goBuild: () => this.go('build'),
+      rm: {
+        subtitle: has ? plan.subtitle : 'The base path: five stages, about ' + plan.hours + ' hours. Personalise it to trim what you already know.',
+        retakeLabel: has ? 'Retake assessment' : 'Personalise this roadmap', noAssessment: !has,
+        sumTime: has ? '≈ ' + plan.hours + ' hours over ' + plan.weeks + ' weeks at ' + (HPW_LABEL[plan.a.time] || '') : '≈ ' + plan.hours + ' hours across five stages',
+        projects: projs, skills: skills.slice(0, 8)
+      }
+    };
+  }
+  vLearn() {
+    const s = this.state, f = s.filter;
+    const list = RESOURCES.filter((r) => f === 'all' || r.stage === f);
+    return {
+      isLearn: s.view === 'learn',
+      filters: FILTERS.map((x) => ({ label: x[1], pressed: f === x[0], pick: () => this.setState({ filter: x[0] }) })),
+      showFeatured: f === 'all', featured: FEATURED.map((k) => this.resCard(RES_BY[k])),
+      resList: list.map((r) => this.resCard(r)),
+      agree: [
+        { t: 'Ship software first. Python, HTTP APIs, Git, Docker and testing come before any LLM work in the KDnuggets, Scrimba and Dataquest roadmaps.' },
+        { t: 'RAG and tool use sit in the middle of nearly every list, with agents after them.' },
+        { t: 'Evals and observability are not optional. dataskew puts evaluation at step 5, before RAG and agents. Louis Bouchard puts debugging, evaluation and tracing ahead of collecting bookmarks. Both live cohorts give evals their own week.' },
+        { t: 'Projects beat certificates. Dataquest, Scrimba and Interview Query all say so.' },
+        { t: 'MCP now appears in nearly every list, including both live cohorts and the DeepLearning.AI course.' }
+      ],
+      differ: [
+        { t: 'How much ML and math first. Dataquest spends about 103 hours on data, statistics and ML. Scrimba says light math is enough. dataskew puts transformer foundations at step 1.' },
+        { t: 'Where fine-tuning goes. Bouchard\'s repo says fine-tune last, once you have a baseline and evals. dataskew puts it at step 8, after RAG and agents. The atryx roadmap puts it in phase 6, before evaluation.' },
+        { t: 'Agents versus workflows. Bouchard\'s repo says start with a workflow and add autonomy only where it clearly buys something. The courses all cover multi-agent systems as a headline topic.' },
+        { t: 'Who is selling. Scrimba, Dataquest, Codebasics and the cohorts each rank their own products well. This site lists the free option first, then the paid ones.' }
+      ],
+      srcs: [
+        ['KDnuggets: AI engineer self-study roadmap (Feb 2026)', 'https://www.kdnuggets.com/how-to-become-an-ai-engineer-in-2026-a-self-study-roadmap', 'Seven steps from Python to LLMOps, with a course for each.'],
+        ['Dataquest: AI engineer roadmap', 'https://www.dataquest.io/blog/ai-engineer-roadmap/', 'About 8–12 months at 5 hours a week. Sells its own path.'],
+        ['Scrimba: developer roadmap', 'https://scrimba.com/articles/how-to-become-an-ai-engineer-a-developers-roadmap-for-2026', 'Six steps and what to skip. Sells its own courses.'],
+        ['Scrimba: best AI engineering courses 2026', 'https://scrimba.com/articles/best-ai-engineering-courses-and-certifications-in-2026', 'Twelve courses with prices and durations.'],
+        ['dataskew: AI engineering roadmap', 'https://dataskew.io/roadmaps/ai-engineering/', 'Twelve stages, evals early, and a long reading list.'],
+        ['atryx: AI engineer roadmap 2026', 'https://github.com/atryx/ai-engineer-roadmap-2026', 'Ten phases with time estimates and a tool list.'],
+        ['Louis Bouchard: the roadmap I wish I had', 'https://louisbouchard.substack.com/p/im-sharing-my-full-ai-engineering', 'Opinionated: debugging, evals and tracing over bookmarks.'],
+        ['Louis Bouchard: start-ai-engineering repo', 'https://github.com/louisfb01/start-ai-engineering', 'A curated list with difficulty ratings.'],
+        ['Interview Query: AI engineer skills roadmap', 'https://www.interviewquery.com/p/ai-engineer-skills-roadmap', 'What a portfolio should show: latency, cost and failure cases.'],
+        ['Codebasics: software engineer to AI engineer', 'https://codebasics.io/blog/software-engineer-to-ai-engineer-complete-roadmap-for-2026', 'A 6–12 month estimate for software engineers.'],
+        ['Beyond Vectors: live cohort syllabus', 'https://beyondvectors.com/', 'Six weekends: agents, RAG, tools, evals, production.'],
+        ['aiengg.dev: AI Engineering Cohort syllabus', 'https://aiengg.dev/', 'Six weeks with a production capstone.'],
+        ['DeepLearning.AI: Agentic AI', 'https://www.deeplearning.ai/courses/agentic-ai', 'Andrew Ng. About 10 hours.']
+      ].map((x) => { const f = favOf(x[1], x[0]); return { title: x[0], url: x[1], meta: f.host, note: x[2], aria: x[0] + ', opens in a new tab', icon: f.icon, letter: f.letter, iconErr: hideImg, tag: 'Source', tagCls: 'pill p-gray' }; })
+    };
+  }
+  vTopic() {
+    const s = this.state, r = s.view === 'topic' ? RES_BY[s.param] : null;
+    if (!r) return { isTopic: false, t: {} };
+    const vd = VERDICTS[r.verdict], st = s.progress.resources[r.slug], b = r.build ? PROJ_BY[r.build] : null, n = r.next ? RES_BY[r.next] : null;
+    return {
+      isTopic: true,
+      t: {
+        title: r.title, provider: r.provider, price: r.price, line: r.line, time: r.time, prereq: r.prereq, url: r.url, hasExt: !!r.url,
+        verdictLabel: vd.label, verdictCls: 'pill ' + vd.cls, verdictIcon: vd.icon, stageLabel: 'Stage ' + (r.stage + 1),
+        covers: r.covers.map((t) => ({ t })), not: r.not.map((t) => ({ t })), review: r.review.map((x) => ({ q: x[0], a: x[1] })),
+        learningPressed: st === 'learning', donePressed: st === 'done', setLearning: () => this.setRes(r.slug, 'learning'), setDone: () => this.setRes(r.slug, 'done'),
+        hasBuild: !!b, buildTitle: b ? b.title : '', buildGo: () => b && this.go('project', b.slug),
+        hasNext: !!n, nextTitle: n ? n.title : '', nextGo: () => n && this.go('topic', n.slug)
+      }
+    };
+  }
+  critDone(slug) { const c = this.state.progress.criteria[slug] || [], n = PROJ_BY[slug].criteria.length; let k = 0; for (let i = 0; i < n; i++) if (c[i]) k++; return k; }
+  toggleCriterion(slug, i) {
+    const p = Object.assign({}, this.state.progress), all = Object.assign({}, p.criteria), arr = (all[slug] || []).slice();
+    arr[i] = !arr[i]; all[slug] = arr; p.criteria = all; this.saveProgress(p);
+  }
+  toggleProject(slug) {
+    const p = Object.assign({}, this.state.progress), pr = Object.assign({}, p.projects), on = !pr[slug];
+    if (on) pr[slug] = true; else delete pr[slug];
+    p.projects = pr; this.saveProgress(p);
+    this.setState({ justDone: on ? slug : null });
+    this.toast(on ? 'Project marked complete' : 'Marked as not complete');
+    if (on) setTimeout(() => this.burst(), 60);
+  }
+  toggleCheck(id) {
+    const p = Object.assign({}, this.state.progress), c = Object.assign({}, p.checks);
+    if (c[id]) delete c[id]; else c[id] = true;
+    p.checks = c; this.saveProgress(p);
+  }
+  stageItems(i) {
+    const p = this.state.progress, items = [];
+    RESOURCES.filter((r) => r.stage === i && r.core).forEach((r) => items.push({ kind: 'Review', type: 'res', id: r.slug, label: r.title, done: p.resources[r.slug] === 'done' }));
+    PROJECTS.filter((x) => x.stage === i).forEach((x) => items.push({ kind: 'Project', type: 'proj', id: x.slug, label: x.title, done: !!p.projects[x.slug] }));
+    STAGES[i].checks.forEach((c) => items.push({ kind: 'Check', type: 'check', id: c.id, label: c.text, done: !!p.checks[c.id] }));
+    return items;
+  }
+  litCount() {
+    const plan = makePlan(this.state.assessment); let n = 0;
+    for (let i = 0; i < 5; i++) {
+      if (plan.stages[i].mode === 'skip') { n++; continue; }
+      if (this.stageItems(i).every((x) => x.done)) n++; else break;
+    }
+    return n;
+  }
+  vBuild() {
+    const s = this.state, fk = s.assessment ? s.assessment.focus : 'balanced';
+    const list = PROJECTS.slice().sort((a, b) => (b.focus.indexOf(fk) >= 0 && fk !== 'balanced' ? 1 : 0) - (a.focus.indexOf(fk) >= 0 && fk !== 'balanced' ? 1 : 0));
+    return {
+      isBuild: s.view === 'build',
+      projects: list.map((p) => {
+        const d = this.critDone(p.slug), n = p.criteria.length, complete = !!s.progress.projects[p.slug];
+        return { title: p.title, stageLabel: 'Stage ' + (p.stage + 1), hours: p.hours, done: p.done, focus: fk !== 'balanced' && p.focus.indexOf(fk) >= 0, complete,
+          barStyle: 'width:' + Math.round((complete ? 1 : d / n) * 100) + '%', progressText: complete ? 'Done' : d + ' of ' + n + ' criteria', open: () => this.go('project', p.slug) };
+      })
+    };
+  }
+  vProject() {
+    const s = this.state, p = s.view === 'project' ? PROJ_BY[s.param] : null;
+    if (!p) return { isProject: false, pj: {} };
+    const arr = s.progress.criteria[p.slug] || [], complete = !!s.progress.projects[p.slug], d = this.critDone(p.slug);
+    return {
+      isProject: true,
+      pj: {
+        title: p.title, stageLabel: 'Stage ' + (p.stage + 1), hours: p.hours, what: p.what, stack: p.stack.map((t) => ({ t })), mistakes: p.mistakes.map((t) => ({ t })),
+        criteria: p.criteria.map((t, i) => ({ text: t, checked: !!arr[i], toggle: () => this.toggleCriterion(p.slug, i) })),
+        critText: d + ' of ' + p.criteria.length + ' criteria met. Tick them honestly; "done" means all of them.',
+        complete, completeLabel: complete ? 'Marked complete. Undo' : 'Mark complete', toggleComplete: () => this.toggleProject(p.slug),
+        showFollow: complete && s.justDone === p.slug
+      }
+    };
+  }
+  vProgress() {
+    const s = this.state, plan = makePlan(s.assessment), p = s.progress;
+    let done = 0, total = 0, next = null;
+    const pstages = plan.stages.map((ps) => {
+      const st = STAGES[ps.i], skip = ps.mode === 'skip', items = skip ? [] : this.stageItems(ps.i);
+      const d = items.filter((x) => x.done).length; done += d; total += items.length;
+      if (!next) { const nx = items.find((x) => !x.done); if (nx) next = nx; }
+      const open = s.open['p-' + st.id] === undefined ? false : s.open['p-' + st.id];
+      return {
+        title: st.title, icon: st.icon, chip: 'ic deco ' + TONES[[1, 2, 0, 3, 4][ps.i]], skipped: skip,
+        sub: skip ? 'Skipped for you' : d + ' of ' + items.length + ' done', barStyle: 'width:' + (items.length ? Math.round(d / items.length * 100) : 100) + '%',
+        expanded: open ? 'true' : 'false', foldCls: 'fold' + (open ? ' open' : ''), toggle: () => this.setState({ open: Object.assign({}, this.state.open, { ['p-' + st.id]: !open }) }),
+        items: items.map((x) => ({
+          label: x.label, kind: x.kind, cls: 'irow' + (x.done ? ' done' : ''), isCheck: x.type === 'check', isLink: x.type !== 'check', checked: x.done, boxCls: 'chk-box' + (x.done ? ' on' : ''),
+          toggle: () => this.toggleCheck(x.id), go: () => this.go(x.type === 'res' ? 'topic' : 'project', x.id)
+        }))
+      };
+    });
+    const pct = total ? Math.round(done / total * 100) : 0, started = !!p.startedAt;
+    const weeksIn = started ? Math.max(1, Math.floor((Date.now() - p.startedAt) / 604800000) + 1) : 0;
+    const goNext = next ? () => this.go(next.type === 'res' ? 'topic' : next.type === 'proj' ? 'project' : 'roadmap', next.type === 'check' ? null : next.id) : null;
+    return {
+      isProgress: s.view === 'progress', isAbout: s.view === 'about', pstages,
+      pg: {
+        pct, ringOffset: Math.round(326.7 * (1 - pct / 100) * 10) / 10, countLabel: done + ' of ' + total + ' milestones complete',
+        line: started ? 'You are ' + weeksIn + (weeksIn === 1 ? ' week' : ' weeks') + ' in. Small steps count.' : 'Nothing started yet. Open a resource or a project and mark it as you go.',
+        nextLine: next ? 'Next milestone: ' + next.label : (total ? 'Every milestone is done. Ship something and tell people.' : ''),
+        hasNext: !!next, nextGo: goNext || (() => {}), notes: p.notes || '',
+        onNotes: (e) => { const q = Object.assign({}, this.state.progress, { notes: e && e.target ? e.target.value : '' }); this.setState({ progress: q }); writeJSON(KEYS.p, q); }
+      }
+    };
+  }
+  finishAssessment() {
+    const a = Object.assign({}, DEFAULTS, this.state.answers);
+    writeJSON(KEYS.a, a);
+    this.setState({ assessment: a });
+    this.go('result');
+  }
+  planVals() {
+    const p = makePlan(this.state.assessment || this.state.answers);
+    return { weeks: p.weeks, hours: p.hours, hpwShort: p.hpwShort, trimmed: p.trimmed, summary: p.summary };
+  }
+}
+function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+const NOICON = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+function favOf(url, title) {
+  let host = ''; try { host = new URL(url).hostname; } catch (e) { host = ''; }
+  return { icon: host ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(host) + '&sz=64' : NOICON, letter: (title || '?').trim().charAt(0).toUpperCase(), host };
+}
+function hideImg(e) { try { e.target.style.display = 'none'; } catch (x) { /* noop */ } }
+function tagOf(price) {
+  if (/^Paid/i.test(price)) return ['Paid', 'pill p-peach'];
+  if (/^Free to audit|^Free ·.*(Pro|certificate)/i.test(price)) return ['Free + paid', 'pill p-lav'];
+  if (/^Free/i.test(price)) return ['Free', 'pill p-mint'];
+  if (/^Book/i.test(price)) return ['Book', 'pill p-gray'];
+  return ['Check site', 'pill p-gray'];
+}
+function altVal(a) { const f = favOf(a.u, a.t), tg = tagOf(a.price); return { title: a.t, url: a.u, meta: a.p + ' · ' + a.price + ' · ' + a.kind + ' · via ' + a.via, note: a.note, aria: a.t + ', ' + tg[0] + ', opens in a new tab', icon: f.icon, letter: f.letter, iconErr: hideImg, tag: tg[0], tagCls: tg[1] }; }
+function wallCard(r) { const v = VERDICTS[r.verdict] || VERDICTS.worth; return { cls: 'pill ' + v.cls, label: v.label, title: r.title, provider: r.provider }; }
+</script>
+</body>
+</html>
